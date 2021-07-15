@@ -4,7 +4,7 @@
 #include <pthread.h>
 #include <time.h>
 
-#define P 2 
+#define P 4
 #define TN 8
 #define NIL ((List)0)
 
@@ -78,34 +78,39 @@ void printList(List l) {
 
 
 List setList(List sourceList,List subsetList,int begin,int end){
-    List p=createList();
-    List temp=createList();
-    int i=0;
+  List p=createList();
+  List temp=createList();
+  int i=0;
 
-    for(i=begin;i<end;i++){
-        temp=appendList(subsetList,insertList(iList(sourceList,i),createList()));
-        if(end+1<=TN){
-          p=appendList(p,setList(sourceList,temp,i+1,end+1));
-        }else{
-          p=appendList(p,temp);
-        }
+  for(i=begin;i<end;i++){
+    temp=appendList(subsetList,insertList(iList(sourceList,i),createList()));
+    //printf("temp:");
+    //printList(temp);
+    if(end+1<=TN){
+      //printf("再帰前:\n");
+      //printf("i=%d,end=%d\n",i,end);
+      p=appendList(p,setList(sourceList,temp,i+1,end+1));
+    }else{
+      p=appendList(p,temp);
+      //printf("一回目:");
+      //printList(p);
     }
-    return p;
-
+  }
+  //printf("return前:");
+  //printList(p);
+  return p;
 }
-
-
 
 int main(void){
   int i=0;
   List setP=createList();
   List p=malloc(sizeof(Cell));
 
-  for(i=0;i<TN;i++){
+  for(i=TN-1;i>=0;i--){
   setP=insertList(i,setP);
   }
+  printList(setP);
 
-  
   p=setList(setP,createList(),0,TN-P+1);
 
   printList(p);
