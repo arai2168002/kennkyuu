@@ -1,0 +1,3870 @@
+
+-------------LMCLF Scheduling in 1-Processor Environment-------------
+Relative Deadline [Task1] =   688
+Relative Deadline [Task2] =   238
+Relative Deadline [Task3] =   238
+Relative Deadline [Task4] =   238
+Release Time [Task1] =     0
+Release Time [Task2] =     0
+Release Time [Task3] =   238
+Release Time [Task4] =   476
+WCET [Task1] =   252
+WCET [Task2] =     2
+WCET [Task3] =     2
+WCET [Task4] =     2
+Scheduler thread starts...
+Task 1/4 thread starts...
+Task 2/4 thread starts...
+Task1 next starts
+Laxity Time [Task1] = 436.000
+Task2 next starts
+Laxity Time [Task2] = 236.000
+fin=0,count=2
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 2 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 2 and then task 2
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=8694.000000 when i=2, k=2
+
+Sort LMCLF[2] = (0.000000 * 8694) + (2 * 236) = 472.0
+Sort LMCLF[1] = (0.000000 * 81888) + (252 * 436) = 109872.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 8694
+Worst_Memory = 8694
+Scheduled Task = 2
+fin=0,count=2
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 2 first
+0.000000 <= alpha <= 0.000452 for scheduling task 2 and then task 1
+0.000452 <= alpha <= 1000000000000.000000 for scheduling task 2 and then task 2
+oldalpha=0.000452, alphadiff=0.000000
+newalpha=0.000452
+minmemory=-8694.000000 when i=2, k=2
+
+Sort LMCLF[2] = (0.000452 * -8694) + (1 * 236) = 232.0
+Sort LMCLF[1] = (0.000452 * 81888) + (252 * 435) = 109657.0
+Sort LMCLF[3] = (0.000452 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000452 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 0
+Scheduled Task = 2
+Task2 finishes
+fin=0,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=81888.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 81888) + (252 * 434) = 109368.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 81888
+Worst_Memory = 81888
+Task 2/4 thread stops...
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=37173.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -35955) + (251 * 434) = 108934.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 45933
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=78753.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 73128) + (250 * 434) = 108500.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 119061
+Worst_Memory = 119061
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=5625.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 5625) + (249 * 434) = 108066.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 124686
+Worst_Memory = 124686
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-35818.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -41076) + (248 * 434) = 107632.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 83610
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=56711.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 5258) + (247 * 434) = 107198.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 88868
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=51453.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 51453) + (246 * 434) = 106764.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 140321
+Worst_Memory = 140321
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-58816.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -58816) + (245 * 434) = 106330.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 81505
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-9942.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -48616) + (244 * 434) = 105896.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 32889
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=38674.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 38674) + (243 * 434) = 105462.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 71563
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=17732.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -70138) + (242 * 434) = 105028.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 1425
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=128168.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 87870) + (241 * 434) = 104594.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 89295
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=109110.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 40298) + (240 * 434) = 104160.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 129593
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=77426.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 68812) + (239 * 434) = 103726.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 198405
+Worst_Memory = 198405
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=8614.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 8614) + (238 * 434) = 103292.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 207019
+Worst_Memory = 207019
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-428.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -428) + (237 * 434) = 102858.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 206591
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-45575.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -45575) + (236 * 434) = 102424.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 161016
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-71324.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -83646) + (235 * 434) = 101990.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 77370
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=82179.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 12322) + (234 * 434) = 101556.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 89692
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=69857.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 69857) + (233 * 434) = 101122.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 159549
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-71304.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -71304) + (232 * 434) = 100688.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 88245
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-46316.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -76014) + (231 * 434) = 100254.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 12231
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=121810.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 29698) + (230 * 434) = 99820.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 41929
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=92112.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 92112) + (229 * 434) = 99386.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 134041
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-14669.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -14669) + (228 * 434) = 98952.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 119372
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-85593.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -85593) + (227 * 434) = 98518.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 33779
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=53381.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -1591) + (226 * 434) = 98084.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 32188
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=80640.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 54972) + (225 * 434) = 97650.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 87160
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=28021.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 25668) + (224 * 434) = 97216.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 112828
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=2353.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 2353) + (223 * 434) = 96782.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 115181
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=2297.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -36391) + (222 * 434) = 96348.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 78790
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=81777.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 38688) + (221 * 434) = 95914.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 117478
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=43089.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 43089) + (220 * 434) = 95480.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 160567
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-45309.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -45309) + (219 * 434) = 95046.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 115258
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-904.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -63574) + (218 * 434) = 94612.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 51684
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=62670.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 62670) + (217 * 434) = 94178.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 114354
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-64588.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -64588) + (216 * 434) = 93744.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 49766
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-25149.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -25149) + (215 * 434) = 93310.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 24617
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=44833.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -21470) + (214 * 434) = 92876.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 3147
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=87715.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 66303) + (213 * 434) = 92442.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 69450
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=21412.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 21412) + (212 * 434) = 92008.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 90862
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-53257.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -88351) + (211 * 434) = 91574.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 2511
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=124661.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 35094) + (210 * 434) = 91140.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 37605
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=157700.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 89567) + (209 * 434) = 90706.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 127172
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=146681.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 68133) + (208 * 434) = 90272.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 195305
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=78548.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 78548) + (207 * 434) = 89838.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 273853
+Worst_Memory = 273853
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-4703.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -32130) + (206 * 434) = 89404.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 241723
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=27846.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 27427) + (205 * 434) = 88970.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 269150
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=69049.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 419) + (204 * 434) = 88536.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 269569
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=68630.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 68630) + (203 * 434) = 88102.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 338199
+Worst_Memory = 338199
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-10845.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -14588) + (202 * 434) = 87668.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 323611
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=3743.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 3743) + (201 * 434) = 87234.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 327354
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-59158.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -59158) + (200 * 434) = 86800.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 268196
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-83765.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -83765) + (199 * 434) = 86366.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 184431
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=56845.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -28944) + (198 * 434) = 85932.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 155487
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=154331.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 85789) + (197 * 434) = 85498.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 241276
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=133653.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 68542) + (196 * 434) = 85064.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 309818
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=65111.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 65111) + (195 * 434) = 84630.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 374929
+Worst_Memory = 374929
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-91512.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -91512) + (194 * 434) = 84196.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 283417
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-60801.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -91433) + (193 * 434) = 83762.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 191984
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=30632.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 30632) + (192 * 434) = 83328.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 222616
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-37856.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -37856) + (191 * 434) = 82894.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 184760
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=17853.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -1822) + (190 * 434) = 82460.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 182938
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=19675.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 19675) + (189 * 434) = 82026.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 202613
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=35925.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -63978) + (188 * 434) = 81592.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 138635
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=99903.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 99903) + (187 * 434) = 81158.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 238538
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-65957.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -65957) + (186 * 434) = 80724.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 172581
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=55187.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -25896) + (185 * 434) = 80290.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 146685
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=81083.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 81083) + (184 * 434) = 79856.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 227768
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-1562.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -1562) + (183 * 434) = 79422.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 226206
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-24703.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -94016) + (182 * 434) = 78988.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 132190
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=69313.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 69313) + (181 * 434) = 78554.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 201503
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=8878.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -65448) + (180 * 434) = 78120.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 136055
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=74326.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 74326) + (179 * 434) = 77686.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 210381
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-70007.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -70007) + (178 * 434) = 77252.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 140374
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-47526.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -88171) + (177 * 434) = 76818.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 52203
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=102045.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 40645) + (176 * 434) = 76384.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 92848
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=151334.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 61400) + (175 * 434) = 75950.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 154248
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=141291.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 89934) + (174 * 434) = 75516.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 244182
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=93762.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 51357) + (173 * 434) = 75082.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 295539
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=76973.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 42405) + (172 * 434) = 74648.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 337944
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=34568.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 34568) + (171 * 434) = 74214.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 372512
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=21442.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -20024) + (170 * 434) = 73780.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 352488
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=107468.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 41466) + (169 * 434) = 73346.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 393954
+Worst_Memory = 393954
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=147592.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 66002) + (168 * 434) = 72912.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 459956
+Worst_Memory = 459956
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=128053.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 81590) + (167 * 434) = 72478.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 541546
+Worst_Memory = 541546
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=109931.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 46463) + (166 * 434) = 72044.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 588009
+Worst_Memory = 588009
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=103522.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 63468) + (165 * 434) = 71610.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 651477
+Worst_Memory = 651477
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=51215.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 40054) + (164 * 434) = 71176.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 691531
+Worst_Memory = 691531
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=11161.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 11161) + (163 * 434) = 70742.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 702692
+Worst_Memory = 702692
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=42229.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -17495) + (162 * 434) = 70308.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 685197
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=59724.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 59724) + (161 * 434) = 69874.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 744921
+Worst_Memory = 744921
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-43200.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -43200) + (160 * 434) = 69440.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 701721
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-70763.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -70763) + (159 * 434) = 69006.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 630958
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-97822.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -97822) + (158 * 434) = 68572.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 533136
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-3528.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -3528) + (157 * 434) = 68138.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 529608
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-60440.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -60440) + (156 * 434) = 67704.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 469168
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=19454.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -51256) + (155 * 434) = 67270.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 417912
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=70710.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 70710) + (154 * 434) = 66836.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 488622
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-8469.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -8469) + (153 * 434) = 66402.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 480153
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-21117.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -21117) + (152 * 434) = 65968.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 459036
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-11810.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -99106) + (151 * 434) = 65534.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 359930
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=87296.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 87296) + (150 * 434) = 65100.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 447226
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-10869.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -60148) + (149 * 434) = 64666.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 387078
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=109981.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 49279) + (148 * 434) = 64232.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 436357
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=60702.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 60702) + (147 * 434) = 63798.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 497059
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-24193.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -64385) + (146 * 434) = 63364.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 432674
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=40192.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 40192) + (145 * 434) = 62930.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 472866
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-60300.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -60300) + (144 * 434) = 62496.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 412566
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-71700.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -71700) + (143 * 434) = 62062.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 340866
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=24965.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -11096) + (142 * 434) = 61628.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 329770
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=36061.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 36061) + (141 * 434) = 61194.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 365831
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-25329.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -25329) + (140 * 434) = 60760.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 340502
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=7914.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -3072) + (139 * 434) = 60326.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 337430
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=10986.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 10986) + (138 * 434) = 59892.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 348416
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=34539.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -59717) + (137 * 434) = 59458.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 288699
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=131957.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 94256) + (136 * 434) = 59024.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 382955
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=37701.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 37701) + (135 * 434) = 58590.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 420656
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-31996.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -31996) + (134 * 434) = 58156.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 388660
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-16963.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -16963) + (133 * 434) = 57722.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 371697
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-58099.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -58099) + (132 * 434) = 57288.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 313598
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-65601.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -65601) + (131 * 434) = 56854.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 247997
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-64363.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -75167) + (130 * 434) = 56420.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 172830
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=109184.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 10804) + (129 * 434) = 55986.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 183634
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=98380.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 98380) + (128 * 434) = 55552.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 282014
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-61961.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -91117) + (127 * 434) = 55118.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 190897
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=29156.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 29156) + (126 * 434) = 54684.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 220053
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=16367.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -47124) + (125 * 434) = 54250.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 172929
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=91498.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 63491) + (124 * 434) = 53816.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 236420
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=35581.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 28007) + (123 * 434) = 53382.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 264427
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=81957.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 7574) + (122 * 434) = 52948.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 272001
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=159194.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 74383) + (121 * 434) = 52514.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 346384
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=123547.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 84811) + (120 * 434) = 52080.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 431195
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=38736.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 38736) + (119 * 434) = 51646.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 469931
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-37600.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -37600) + (118 * 434) = 51212.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 432331
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-33476.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -33476) + (117 * 434) = 50778.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 398855
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-23269.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -26743) + (116 * 434) = 50344.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 372112
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=85440.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 3474) + (115 * 434) = 49910.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 375586
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=81966.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 81966) + (114 * 434) = 49476.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 457552
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-41012.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -41012) + (113 * 434) = 49042.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 416540
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-82247.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -82247) + (112 * 434) = 48608.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 334293
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=51496.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -31147) + (111 * 434) = 48174.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 303146
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=102306.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 82643) + (110 * 434) = 47740.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 385789
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=19663.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 19663) + (109 * 434) = 47306.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 405452
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=20597.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -21901) + (108 * 434) = 46872.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 383551
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=42498.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 42498) + (107 * 434) = 46438.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 426049
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-91115.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -91115) + (106 * 434) = 46004.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 334934
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-6632.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -6632) + (105 * 434) = 45570.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 328302
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-95809.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -95809) + (104 * 434) = 45136.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 232493
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-82434.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -82434) + (103 * 434) = 44702.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 150059
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-6349.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -6349) + (102 * 434) = 44268.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 143710
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-35971.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -96978) + (101 * 434) = 43834.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 46732
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=61007.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 61007) + (100 * 434) = 43400.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 107739
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-38525.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -80421) + (99 * 434) = 42966.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 27318
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=41896.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 41896) + (98 * 434) = 42532.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 69214
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-41091.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -41091) + (97 * 434) = 42098.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 28123
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=29822.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -23368) + (96 * 434) = 41664.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 4755
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=53190.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 53190) + (95 * 434) = 41230.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 57945
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-25960.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -46817) + (94 * 434) = 40796.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 11128
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=67679.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 20857) + (93 * 434) = 40362.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 31985
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=46822.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 46822) + (92 * 434) = 39928.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 78807
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-47058.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -59811) + (91 * 434) = 39494.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 18996
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=38550.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 12753) + (90 * 434) = 39060.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 31749
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=25797.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 25797) + (89 * 434) = 38626.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 57546
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=50133.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -13531) + (88 * 434) = 38192.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 44015
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=63664.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 63664) + (87 * 434) = 37758.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 107679
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-22823.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -62082) + (86 * 434) = 37324.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 45597
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=39259.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 39259) + (85 * 434) = 36890.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 84856
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-36520.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -36520) + (84 * 434) = 36456.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 48336
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-25041.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -25041) + (83 * 434) = 36022.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 23295
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=18818.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -5877) + (82 * 434) = 35588.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 17418
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=85111.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 24695) + (81 * 434) = 35154.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 42113
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=83161.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 60416) + (80 * 434) = 34720.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 102529
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=79664.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 22745) + (79 * 434) = 34286.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 125274
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=56919.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 56919) + (78 * 434) = 33852.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 182193
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-63901.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -93322) + (77 * 434) = 33418.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 88871
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=29421.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 29421) + (76 * 434) = 32984.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 118292
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-3835.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -83563) + (75 * 434) = 32550.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 34729
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=169847.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 79728) + (74 * 434) = 32116.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 114457
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=90119.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 90119) + (73 * 434) = 31682.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 204576
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-35223.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -35223) + (72 * 434) = 31248.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 169353
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-99672.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -99672) + (71 * 434) = 30814.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 69681
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=5918.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -7164) + (70 * 434) = 30380.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 62517
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=105848.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 13082) + (69 * 434) = 29946.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 75599
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=92766.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 92766) + (68 * 434) = 29512.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 168365
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-74426.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -74426) + (67 * 434) = 29078.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 93939
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-17693.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -91569) + (66 * 434) = 28644.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 2370
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=117103.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 73876) + (65 * 434) = 28210.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 76246
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=95913.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 43227) + (64 * 434) = 27776.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 119473
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=145657.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 52686) + (63 * 434) = 27342.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 172159
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=92971.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 92971) + (62 * 434) = 26908.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 265130
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-73497.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -73497) + (61 * 434) = 26474.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 191633
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-19895.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -23684) + (60 * 434) = 26040.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 167949
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=81992.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 3789) + (59 * 434) = 25606.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 171738
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=123432.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 78203) + (58 * 434) = 25172.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 249941
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=45229.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 45229) + (57 * 434) = 24738.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 295170
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=21409.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -13973) + (56 * 434) = 24304.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 281197
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=84579.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 35382) + (55 * 434) = 23870.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 316579
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=49197.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 49197) + (54 * 434) = 23436.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 365776
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=2238.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -44348) + (53 * 434) = 23002.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 321428
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=90166.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 46586) + (52 * 434) = 22568.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 368014
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=125902.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 43580) + (51 * 434) = 22134.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 411594
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=82322.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 82322) + (50 * 434) = 21700.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 493916
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=1341.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -69636) + (49 * 434) = 21266.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 424280
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=119304.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 70977) + (48 * 434) = 20832.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 495257
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=106174.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 48327) + (47 * 434) = 20398.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 543584
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=114160.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 57847) + (46 * 434) = 19964.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 601431
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=56313.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 56313) + (45 * 434) = 19530.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 657744
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=9236.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -71703) + (44 * 434) = 19096.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 586041
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=80939.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 80939) + (43 * 434) = 18662.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 666980
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-54060.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -87182) + (42 * 434) = 18228.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 579798
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=89516.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 33122) + (41 * 434) = 17794.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 612920
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=91854.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 56394) + (40 * 434) = 17360.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 669314
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=35460.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 35460) + (39 * 434) = 16926.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 704774
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-26208.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -66376) + (38 * 434) = 16492.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 638398
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=40168.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 40168) + (37 * 434) = 16058.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 678566
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-546.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -44183) + (36 * 434) = 15624.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 634383
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=77552.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 43637) + (35 * 434) = 15190.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 678020
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=95360.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 33915) + (34 * 434) = 14756.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 711935
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=61445.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 61445) + (33 * 434) = 14322.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 773380
+Worst_Memory = 773380
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-71130.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -71130) + (32 * 434) = 13888.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 702250
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-3235.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -49902) + (31 * 434) = 13454.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 652348
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=46667.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 46667) + (30 * 434) = 13020.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 699015
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-58418.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -58418) + (29 * 434) = 12586.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 640597
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-64431.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -64431) + (28 * 434) = 12152.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 576166
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-73651.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -73651) + (27 * 434) = 11718.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 502515
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-37929.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -37929) + (26 * 434) = 11284.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 464586
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=71148.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -27264) + (25 * 434) = 10850.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 437322
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=120865.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 98412) + (24 * 434) = 10416.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 535734
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=105862.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 22453) + (23 * 434) = 9982.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 558187
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=130679.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 83409) + (22 * 434) = 9548.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 641596
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=47270.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 47270) + (21 * 434) = 9114.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 688866
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-1781.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -31574) + (20 * 434) = 8680.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 657292
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=52016.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 29793) + (19 * 434) = 8246.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 687085
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=22223.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 22223) + (18 * 434) = 7812.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 709308
+Scheduled Task = 1
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-3710.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -3710) + (17 * 434) = 7378.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 705598
+Task 3/4 thread starts...
+Task3 next starts
+Laxity Time [Task3] = 236.000
+Scheduled Task = 1
+fin=1,count=2
+0.546991 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+1.063749 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+0.546991 <= alpha <= 1.063749 for scheduling task 1 and then task 3
+0.000000 <= alpha <= 0.546991 for scheduling task 3 first
+0.000000 <= alpha <= 0.546991 for scheduling task 3 and then task 3
+oldalpha=1.063749, alphadiff=0.000000
+newalpha=1.063749
+minmemory=-3138.000000 when i=1, k=1
+
+Sort LMCLF[1] = (1.063749 * -3138) + (16 * 434) = 3606.0
+Sort LMCLF[3] = (1.063749 * 8694) + (2 * 236) = 9720.0
+Sort LMCLF[2] = (1.063749 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (1.063749 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 702460
+Scheduled Task = 1
+fin=1,count=2
+0.062609 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.062609 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 3
+0.000000 <= alpha <= 0.062609 for scheduling task 3 first
+0.000000 <= alpha <= 0.062609 for scheduling task 3 and then task 3
+oldalpha=0.006261, alphadiff=0.000000
+newalpha=0.006261
+minmemory=-79084.000000 when i=1, k=3
+
+Sort LMCLF[3] = (0.006261 * 8694) + (2 * 235) = 524.0
+Sort LMCLF[1] = (0.006261 * -87778) + (15 * 434) = 5960.4
+Sort LMCLF[2] = (0.006261 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.006261 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 711154
+Scheduled Task = 3
+fin=1,count=2
+0.079156 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.079156 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 3
+0.000000 <= alpha <= 0.079156 for scheduling task 3 first
+0.000000 <= alpha <= 0.079156 for scheduling task 3 and then task 3
+oldalpha=0.007916, alphadiff=0.000000
+newalpha=0.007916
+minmemory=-87778.000000 when i=1, k=3
+
+Sort LMCLF[3] = (0.007916 * -8694) + (1 * 235) = 166.0
+Sort LMCLF[1] = (0.007916 * -87778) + (15 * 433) = 5800.2
+Sort LMCLF[2] = (0.007916 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.007916 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 702460
+Scheduled Task = 3
+Task3 finishes
+fin=1,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-56308.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -87778) + (15 * 432) = 6480.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 614682
+Task 3/4 thread stops...
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=31470.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 31470) + (14 * 432) = 6048.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 646152
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-14928.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -98863) + (13 * 432) = 5616.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 547289
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=84814.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 83935) + (12 * 432) = 5184.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 631224
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=879.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 879) + (11 * 432) = 4752.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 632103
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-69247.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -69247) + (10 * 432) = 4320.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 562856
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=32475.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -5023) + (9 * 432) = 3888.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 557833
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=37498.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 37498) + (8 * 432) = 3456.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 595331
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-73885.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -73885) + (7 * 432) = 3024.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 521446
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-36524.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -36524) + (6 * 432) = 2592.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 484922
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-59183.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -73089) + (5 * 432) = 2160.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 411833
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=89165.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 13906) + (4 * 432) = 1728.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 425739
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=100411.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 75259) + (3 * 432) = 1296.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 500998
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=25152.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * 25152) + (2 * 432) = 864.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 526150
+Scheduled Task = 1
+fin=2,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 1 and then task 1
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-526150.000000 when i=1, k=1
+
+Sort LMCLF[1] = (0.000000 * -526150) + (1 * 432) = 432.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 1000000000000) = 1000000000000.0
+Current_Memory = 0
+Scheduled Task = 1
+Task1 finishes
+fin=2,count=0
+Current_Memory = 0
+Task 1/4 thread stops...
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+fin=3,count=0
+Current_Memory = 0
+Task 4/4 thread starts...
+Task4 next starts
+Laxity Time [Task4] = 236.000
+fin=3,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 4 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 4 and then task 4
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=8694.000000 when i=4, k=4
+
+Sort LMCLF[4] = (0.000000 * 8694) + (2 * 236) = 472.0
+Sort LMCLF[1] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Current_Memory = 8694
+Scheduled Task = 4
+fin=3,count=1
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 4 first
+0.000000 <= alpha <= 1000000000000.000000 for scheduling task 4 and then task 4
+oldalpha=0.000000, alphadiff=0.000000
+newalpha=0.000000
+minmemory=-8694.000000 when i=4, k=4
+
+Sort LMCLF[4] = (0.000000 * -8694) + (1 * 236) = 236.0
+Sort LMCLF[1] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[2] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Sort LMCLF[3] = (0.000000 * 0) + (0 * 1000000000000) = 1000000000000.0
+Current_Memory = 0
+Scheduled Task = 4
+Task4 finishes
+fin=3,count=0
+Current_Memory = 0
+Task 4/4 thread stops...
+fin=4,count=0
+Current_Memory = 0
+
+When Finished Laxity Time of Task1 = 432.000
+When Finished Laxity Time of Task2 = 236.000
+When Finished Laxity Time of Task3 = 235.000
+When Finished Laxity Time of Task4 = 236.000
+The Number of Deadline Miss = 0
+Worst Case Memory Consumption (LMCLF) = 773380
+
+-------------LMCLF Scheduling in 1-Processor Environment-------------
+
