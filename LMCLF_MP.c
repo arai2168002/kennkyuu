@@ -9,6 +9,7 @@
 //#define P 1  				//プロセッサ数
 #define MAX 1000000000000		//起動していない時
 //#define alpha 1000.0		//換算レート
+#define NIL ((List)0)
 #define S 1024
 
 int TN = 0;					//タスク数
@@ -50,6 +51,11 @@ typedef struct{
 	double Laxity_Time;
 }data;
 
+typedef struct cell {
+  int element;
+  struct cell *next;
+} Cell,*List;
+
 
 
 data task_data[S];
@@ -67,9 +73,20 @@ int pthread_yield(void);				//コンパイラに警告を出させないため�
 
 int get_digit(int n);                //桁数を知る
 
-int* getsetList();                  //プロセッサ分の組み合わせ
+List createList(void);				//空のリストを作成
+List insertList(int element,List l);	//リストの先頭に要素を追加する
+int nullpList(List l);				//リストが空かどうかを返す
+int headList(List l);				//リストの先頭要素を返す
+List tailList(List l);				//リストの先頭要素を削除
+int tailarray(List l,int i);		//
+List appendList(List l1,List l2);	//リストl1の末尾にlリストl2を連結
+int iList(List l1,int i);			//リストのi番目の要素を返す
+void printList(List l);				//リストの要素を表示
+List firstnList(List l,unsigned int n);		//リストの先頭からn番目までの要素を削除
+List restnList(List l,unsigned int n);		//リストの末尾からn番目までの要素を削除
+List setList(List sourceList,List subsetList,int begin,int end);		//組み合わせの全パターンを格納したリストを返す
+int calcNumOfCombination(int n, int r);		//組み合わせの総数を返す
 
-int* setList();                     //getsetListの再帰
 
 
 /*スレッド間で変数を保護するmutex*/
@@ -439,11 +456,12 @@ void *thread_LMCLF(){
 
 /*優先度関数値が小さい順にソートする関数*/
 void LMCLF(){
+
 	double priority_func[S];		//優先度関数値格納変数（作業用）
 	double memory=0,minmemory=MAX;               //メモリ消費量格納変数
 	double priority_func1=0,priority_func2=0;
-	int i = 0, j = 0, k = 0,l = 0,c = 0;		//カウント用変数
-	unsigned long long  set1=0,set2=0; //2ステップ分のプロセッサ数分のタスク集合
+	int i = 0, j = 0, k = 0,l = 0,c = 0,d = 0,e =0,f = 0,g=0,h=0,o=0,q=0;		//カウント用変数
+	int set1=0,set2=0; //2ステップ分のプロセッサ数分のタスク集合
 	double alphauppermin=MAX,alphalowermax=0;   //αの範囲最大最小
 	double alphaupperminsav=MAX,alphalowermaxsav=0;   //αの範囲最大最小(保存用)
     double s1memory=0,s2memory=0;  //1ステップ目,2ステップ目のメモリの合計
@@ -452,16 +470,43 @@ void LMCLF(){
 	double randma1=0,randma2=0;	//α×消費メモリ増分
 	int keta1=0,keta2=0; //α×消費メモリ増分と残余実行時間×余裕時間の桁数を引いたもの
 	int besti,bestk;   // 最小メモリとなるiとkを記憶
-	int setP[P];
+
+  	List setP=createList();
+  	List p=createList();	//1ステップ目でのタスクの組み合わせの集合
+  	List z=createList();    //２ステップ目でのタスクの組み合わせの集合
+  	int kumi1[P],kumi2[P];
 	
 	pthread_mutex_lock(&mutex);
         alphadiff=0;
-  
-		for(i=0;i<TN;i++){
+
+    //fprintf(stderr,"%lld\n",set1);
+	/*換算レートαの決定*/
+  	for(i=TN-1;i>=0;i--){
+    	setP=insertList(i,setP);
+  	}
+
+	//printf("タスク番号：");
+  	//printList(setP);
+
+  	p=setList(setP,createList(),0,TN-P+1);
+
+  	//printf("組み合わせ：");
+  	//printList(p);
+
+  	for(set1=0;set1<calcNumOfCombination(TN,P);set1++){
+    	for(c=0;c<P;c++){
+      		kumi1[c]=headList(p);
+      		p=tailList(p);
+      		//printf("kumi[%d][%d]=%d\n",c,d,kumi[i][j]);
+    	}
+
+		alphauppermin=MAX,alphalowermax=0;    
+		for(i=0,e=0;i<TN;i++){
 			//alphauppermin=MAX,alphalowermax=0;
-			if((set1&(int)pow(2,i))!=0 && state[i] == 1){  /* set1のiビット目が1ならば */
-				for(j=0;j<TN;j++){
-					if((set1&(int)pow(2,j))==0 && state[j] == 1){  //set1のiビット目が0ならば
+			if(i==kumi1[e] && state[i] == 1){  /* set1のiビット目が1ならば */
+				e++;
+				for(j=0,f=0;j<TN;j++){
+					if(j!=kumi1[f] && state[j] == 1){  //set1のiビット目が0ならば
 						if(rand_memory[i][step[i]] < rand_memory[j][step[j]]){// m(i)α+Ci*Li<m(j)α+Cj*Lj && m(j)>m(i) --> Ci*Li-Cj*Lj<(m(j)-m(i))α --> α>(Ci*Li-Cj*Lj)/(m(j)-m(i))
 							tempalpha1=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time)-((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time))/((rand_memory[j][step[j]])-(rand_memory[i][step[i]]));
 							WCETLaxity1=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time))/2;
@@ -469,7 +514,7 @@ void LMCLF(){
 							if(alphalowermax<tempalpha1){	
 		    					alphalowermax=tempalpha1;
 		    					keta1=get_digit(randma1) - get_digit(WCETLaxity1);
-								fprintf(stderr,"1steplower 選ばれたi,jはi=%d,j=%d,alphalowermax=%lf,\n",i,j,alphalowermax);
+								//fprintf(stderr,"1steplower 選ばれたi,jはi=%d,j=%d,alphalowermax=%lf,\n",i,j,alphalowermax);
 							}else{
 							}
 						}else{// m(i)α+Ci*Li<m(j)α+Cj*Lj && m(j)<m(i) --> (m(i)-m(j))α<Cj*Lj-Ci*Li --> α<(Cj*Lj-Ci*Li)/(m(i)-m(j))
@@ -479,9 +524,11 @@ void LMCLF(){
 							if(alphauppermin>tempalpha2){
 		    					alphauppermin=tempalpha2;
 		    					keta1=get_digit(randma1) - get_digit(WCETLaxity1);								
-								fprintf(stderr,"1stepupper 選ばれたi,jはi=%d,j=%d,alphauppermin=%lf,\n",i,j,alphauppermin);
+								//fprintf(stderr,"1stepupper 選ばれたi,jはi=%d,j=%d,alphauppermin=%lf,\n",i,j,alphauppermin);
 							}
 						}
+					}else{
+						f++;
 					}
 				}
             }
@@ -492,21 +539,23 @@ void LMCLF(){
 	    fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d first\n",alphalowermax,alphauppermin,i+1);
 	    alphaupperminsav=alphauppermin; alphalowermaxsav=alphalowermax;
 
-		for(set2=1;set2<pow(2,TN);set2++){ //2ステップ目のプロセッサ分のタスク集合
-	    	for(k=0,c=0;k<TN || c<=P;k++){
-				if((set2&(int)pow(2,k))!=0 ){  /* set2のiビット目が1ならば */
-					c++;  /* Iの要素数cを数える */
-				}
-			}
-			if(c!=P){/* |I|>P または|I|>Pなら現在のset2は無効として次のset2を試す */
-				continue;
-			}
+
+		z=setList(setP,createList(),0,TN-P+1);
+
+  		for(set2=0;set2<calcNumOfCombination(TN,P);set2++){
+    		for(d=0;d<P;d++){
+      			kumi2[d]=headList(z);
+      			z=tailList(z);
+      			//printf("kumi[%d][%d]=%d\n",c,d,kumi[i][j]);
+    		}
+
 			alphauppermin=alphaupperminsav; alphalowermax=alphalowermaxsav;
-	    	for(k=0;k<TN;k++){
+	    	for(k=0,g=0;k<TN;k++){
 	      		//alphauppermin=alphaupperminsav; alphalowermax=alphalowermaxsav;
-	    		if((set2&(int)pow(2,k))!=0 && state[k] == 1){ /* set2のiビット目が1ならば */
-					for(l=0;l<TN;l++){
-						if((set2&(int)pow(2,l))==0 && state[l] == 1){  /* set2のiビット目が0ならば */
+	    		if(k==kumi2[g] && state[k] == 1){ /* set2のiビット目が1ならば */
+					g++;
+					for(l=0,h=0;l<TN;l++){
+						if(l!=kumi2[h] && state[l] == 1){  /* set2のiビット目が0ならば */
 		    				if(rand_memory[k][(k==i)?(step[k]+1):step[k]] < rand_memory[l][(l==i)?(step[l]+1):step[l]] ){  // m(k)α+Ck*Lk<m(l)α+Cl*Ll && m(l)>m(k) --> Ck*Lk-Cl*Ll<(m(l)-m(k))α --> α>(Ck*Lk-Cl*Ll)/(m(l)-m(k))
 		    					tempalpha1=(((task_data[k].WCET - (k==i)?(step[k]+1):step[k]) * task_data[k].Laxity_Time)-((task_data[l].WCET - (l==i)?(step[l]+1):step[l]) * task_data[l].Laxity_Time))/((rand_memory[l][(l==i)?(step[l]+1):step[l]])-(rand_memory[k][(k==i)?(step[k]+1):step[k]]));	
 		    					WCETLaxity2=(((task_data[k].WCET - step[k]) * task_data[k].Laxity_Time) + ((task_data[l].WCET - step[l]) * task_data[l].Laxity_Time))/2;
@@ -514,7 +563,7 @@ void LMCLF(){
 		    					if(alphalowermax<tempalpha1){
 									alphalowermax=tempalpha1;
 									keta2=get_digit(randma2) - get_digit(WCETLaxity2);
-									fprintf(stderr,"2steplower:選ばれたk,lはk=%d,l=%d,alphalowermax=%lf,\n",k,l,alphalowermax);
+									//fprintf(stderr,"2steplower:選ばれたk,lはk=%d,l=%d,alphalowermax=%lf,\n",k,l,alphalowermax);
 		    					}else{
 		    					}
 		    				}else{// m(k)α+Ck*Lk<m(l)α+Cl*Ll && m(l)<m(k) --> (m(k)-m(l))α<Cl*Ll-Ck*Lk  -->  α<(Cl*Ll-Ck*Lk)/(m(k)-m(l))
@@ -524,9 +573,11 @@ void LMCLF(){
 		    					if(alphauppermin>tempalpha2){
 									alphauppermin=tempalpha2;
 									keta2=get_digit(randma2) - get_digit(WCETLaxity2);
-									fprintf(stderr,"2stepupper:選ばれたk,lはk=%d,l=%d,alphauppermin=%lf,\n",k,l,alphauppermin);
+									//fprintf(stderr,"2stepupper:選ばれたk,lはk=%d,l=%d,alphauppermin=%lf,\n",k,l,alphauppermin);
 		    					}
 		    				}	
+						}else{
+							h++;
 						}
 					}
                 }
@@ -534,17 +585,20 @@ void LMCLF(){
             if(alphauppermin>0 && alphalowermax < alphauppermin){ //求めたいαが条件を満たしている時
                 fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d and then task %d\n",alphalowermax,alphauppermin,i+1,k+1);
                 //1ステップ目のメモリ増分の合計
-                for(i=0;i<TN;i++){
-                    if((set1&(int)pow(2,i))!=0){ /* set1のiビット目が1ならば */
+                for(i=0,o=0;i<TN;i++){
+                    if(i==kumi1[o] && state[i] == 1){ /* set1のiビット目が1ならば */
                         s1memory=rand_memory[i][step[i]];
+						o++;
                     }
                 }
-                //2ステップ目のメモリ増分の合計
-                for(i=0;i<TN;i++){
-                    if((set1&(int)pow(2,i))!=0){ /* set1のiビット目が1ならば */
-                        for(k=0;k<TN;k++){
-                            if((set2&(int)pow(2,k))!=0){ /* set2のiビット目が1ならば */
+                //1ステップ目と2ステップ目のメモリ増分の合計
+                for(i=0,o=0;i<TN;i++){
+                    if(i==kumi1[o] && state[i] == 1){ /* set1のiビット目が1ならば */
+						o++;
+                        for(k=0,q=0;k<TN;k++){
+                            if(i==kumi2[q] && state[i] == 1){ /* set2のiビット目が1ならば */
                                 s2memory=rand_memory[k][(k==i)?(step[k]+1):step[k]];
+								q++;
                             }
                         }
                     }
@@ -666,17 +720,102 @@ int get_digit(int n){
 	return digit;
 }
 
-int* getsetList(){
-
-	return setList(,0,TN-P+1);
+List createList(void) {
+  	return NIL;
 }
 
-int* setList(int array[TN][0],int begin,int end){
-	int i;
-	int* p=;
+List insertList(int element,List l) {
+	List temp=malloc(sizeof(Cell));
+  	temp->element=element;
+  	temp->next=l;
+  	return temp;
+}
 
-	for(i=begin;i<end;i++){
+int nullpList(List l) {
+  	return (l==NIL);
+}
 
-	}
-	return setList();
+int headList(List l) {
+  	return l->element;
+}
+
+List tailList(List l) {
+  	return l->next;
+}
+
+int tailarray(List l,int i){
+  	return i++;
+}
+
+
+List appendList(List l1,List l2){
+
+ 	if (nullpList(l1)){
+    	return l2;
+  	}else{
+    	return insertList(headList(l1),appendList(tailList(l1),l2));
+
+  	}
+}
+
+int iList(List l1,int i){
+
+  	if(i==0){
+    	return headList(l1);
+  	}else{
+    	return iList(tailList(l1),i-1);
+  	}
+
+}
+
+void printList(List l) {
+
+  	if(nullpList(l)){ 
+    	printf("\n"); 
+  	}else{
+    	printf("%d ",headList(l));
+    	printList(tailList(l));
+  	}
+}
+
+List firstnList(List l,unsigned int n){
+
+  	if(nullpList(l) || n==0){  //lが空でないまたはnが0のとき空のリストを返す
+    	return createList();
+  	}else{  //それ以外の時lの先頭要素をfirstnListに書き込む
+    	return insertList(headList(l),firstnList(tailList(l),--n));
+  	}
+}
+
+List restnList(List l,unsigned int n){
+  	if(nullpList(l) || n==0){  //lが空でないまたはnが0のとき空のリストを返す
+    	return l;
+  	}else{  //それ以外の時先頭の要素を取り除く
+    	restnList(tailList(l),--n);
+  	}
+}
+
+
+List setList(List sourceList,List subsetList,int begin,int end){
+  	List p=createList();
+  	List temp=createList();
+  	int i=0;
+
+  	for(i=begin;i<end;i++){
+    	temp=appendList(subsetList,insertList(iList(sourceList,i),createList()));
+    	if(end+1<=TN){
+      		p=appendList(p,setList(sourceList,temp,i+1,end+1));
+    	}else{
+      		p=appendList(p,temp);
+    	}
+  	}
+  	return p;
+}
+
+int calcNumOfCombination(int n, int r){
+    int num = 1;
+    for(int i = 1; i <= r; i++){
+        num = num * (n - i + 1) / i;
+    }
+    return num;
 }
