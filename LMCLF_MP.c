@@ -460,8 +460,8 @@ void LMCLF(){
 	double priority_func[S];		//優先度関数値格納変数（作業用）
 	double memory=0,minmemory=MAX;               //メモリ消費量格納変数
 	double priority_func1=0,priority_func2=0;
-	int i = 0, j = 0, k = 0,l = 0,c = 0,d = 0,e =0,f = 0,g=0,h=0,o=0,q=0;		//カウント用変数
-	int set1=0,set2=0; //2ステップ分のプロセッサ数分のタスク集合
+	int i = 0,j = 0,k = 0,l = 0,c = 0,d = 0,e =0,f = 0,g = 0,h = 0,o =0 ,q = 0;		//カウント用変数
+	int set1=0,set2=0; //1,2ステップ目のタスクの組み合わせ数
 	double alphauppermin=MAX,alphalowermax=0;   //αの範囲最大最小
 	double alphaupperminsav=MAX,alphalowermaxsav=0;   //αの範囲最大最小(保存用)
     double s1memory=0,s2memory=0;  //1ステップ目,2ステップ目のメモリの合計
@@ -472,9 +472,9 @@ void LMCLF(){
 	int besti,bestk;   // 最小メモリとなるiとkを記憶
 
   	List setP=createList();
-  	List p=createList();	//1ステップ目でのタスクの組み合わせの集合
-  	List z=createList();    //２ステップ目でのタスクの組み合わせの集合
-  	int kumi1[P],kumi2[P];
+  	List p=createList();	//1ステップ目でのタスクの組み合わせの全体集合
+  	List z=createList();    //２ステップ目でのタスクの組み合わせの全体集合
+  	int kumi1[P],kumi2[P];	//1.2ステップ目の選ばれたタスク集合
 	
 	pthread_mutex_lock(&mutex);
         alphadiff=0;
@@ -494,7 +494,7 @@ void LMCLF(){
   	//printList(p);
 
   	for(set1=0;set1<calcNumOfCombination(TN,P);set1++){
-    	for(c=0;c<P;c++){
+    	for(c=0;c<P;c++){		//プロセッサ分組み合わせを格納し格納したものは削除
       		kumi1[c]=headList(p);
       		p=tailList(p);
       		//printf("kumi[%d][%d]=%d\n",c,d,kumi[i][j]);
@@ -503,10 +503,10 @@ void LMCLF(){
 		alphauppermin=MAX,alphalowermax=0;    
 		for(i=0,e=0;i<TN;i++){
 			//alphauppermin=MAX,alphalowermax=0;
-			if(i==kumi1[e] && state[i] == 1){  /* set1のiビット目が1ならば */
+			if(i==kumi1[e] && state[i] == 1){  /* iタスク目が選ばれていてかつタスクが起動していたら */
 				e++;
 				for(j=0,f=0;j<TN;j++){
-					if(j!=kumi1[f] && state[j] == 1){  //set1のiビット目が0ならば
+					if(j!=kumi1[f] && state[j] == 1){  //jタスク目が選ばれていないかつタスクが起動していたら
 						if(rand_memory[i][step[i]] < rand_memory[j][step[j]]){// m(i)α+Ci*Li<m(j)α+Cj*Lj && m(j)>m(i) --> Ci*Li-Cj*Lj<(m(j)-m(i))α --> α>(Ci*Li-Cj*Lj)/(m(j)-m(i))
 							tempalpha1=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time)-((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time))/((rand_memory[j][step[j]])-(rand_memory[i][step[i]]));
 							WCETLaxity1=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time))/2;
@@ -527,7 +527,7 @@ void LMCLF(){
 								//fprintf(stderr,"1stepupper 選ばれたi,jはi=%d,j=%d,alphauppermin=%lf,\n",i,j,alphauppermin);
 							}
 						}
-					}else{
+					}else{		//jタスク目が選ばれるタスクだった場合
 						f++;
 					}
 				}
