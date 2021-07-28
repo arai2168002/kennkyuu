@@ -97,10 +97,10 @@ pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 
 
 int main(void) {
-	time_t start_time, end_time;
+	clock_t start_clock, end_clock;
 
 	fprintf(stderr, "\n-------------LMCLF Scheduling in %d-Processor Environment-------------\n", P);
-	start_time = time(NULL);
+	start_clock = clock();
 
 	int i = 0, j = 0, k1 = 0, k2 = 0;
 	
@@ -231,10 +231,10 @@ int main(void) {
 	fprintf(fpout_LMCLF, "%d\r\n", Deadline_Miss);
 	fclose(fpout_LMCLF);
 
-	end_time = time(NULL);
+	end_clock = clock();
 	fprintf(stderr, "\n-------------LMCLF Scheduling in %d-Processor Environment-------------\n\n", P);
 
-	fprintf(stderr, "\n Processing time：%ld \n", end_time - start_time);
+	fprintf(stderr, "\n Processing time：%f \n", (end_clock - start_clock)/CLOCKS_PER_SEC);
 
 	return 0;
 }
