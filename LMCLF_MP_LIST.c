@@ -97,9 +97,11 @@ pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 
 
 int main(void) {
+	time_t start_time, end_time;
 
 	fprintf(stderr, "\n-------------LMCLF Scheduling in %d-Processor Environment-------------\n", P);
-	
+	start_time = time(NULL);
+
 	int i = 0, j = 0, k1 = 0, k2 = 0;
 	
 	pthread_t Task[S];
@@ -229,7 +231,10 @@ int main(void) {
 	fprintf(fpout_LMCLF, "%d\r\n", Deadline_Miss);
 	fclose(fpout_LMCLF);
 
+	end_time = time(NULL);
 	fprintf(stderr, "\n-------------LMCLF Scheduling in %d-Processor Environment-------------\n\n", P);
+
+	fprintf(stderr, "\n Processing time：%ld \n", end_time - start_time);
 
 	return 0;
 }
@@ -461,7 +466,7 @@ void LMCLF(){
 	double priority_func[S];		//優先度関数値格納変数（作業用）
 	double memory=0,minmemory=MAX;               //メモリ消費量格納変数
 	double priority_func1=0,priority_func2=0;
-	int i = 0,j = 0,k = 0,l = 0,c = 0,d = 0,e =0,f = 0,g = 0,h = 0,o =0 ,q = 0;		//カウント用変数
+	int i = 0,j = 0,k = 0,l = 0;		//カウント用変数
 	int set1=0,set2=0; //1,2ステップ目のタスクの組み合わせ数
 	double alphauppermin=MAX,alphalowermax=0;   //αの範囲最大最小
 	double alphaupperminsav=MAX,alphalowermaxsav=0;   //αの範囲最大最小(保存用)
@@ -472,28 +477,21 @@ void LMCLF(){
 	int keta1=0,keta2=0; //α×消費メモリ増分と残余実行時間×余裕時間の桁数を引いたもの
 	int besti,bestk;   // 最小メモリとなるiとkを記憶
 
-  	List setP=createList();
+  	List setP=createList();	//タスク番号の集合
   	List p=createList();	//1ステップ目でのタスクの組み合わせの全体集合
   	List z=createList();    //２ステップ目でのタスクの組み合わせの全体集合
-    List kumi1=createList();
-    List kumi2=createList();
+    List kumi1=createList();		//1ステップ目でのタスクの組み合わせ部分集合
+    List kumi2=createList();		//2ステップ目でのタスクの組み合わせ部分集合
 	
 	pthread_mutex_lock(&mutex);
         alphadiff=0;
 
-    //fprintf(stderr,"%lld\n",set1);
 	/*換算レートαの決定*/
   	for(i=TN-1;i>=0;i--){
     	setP=insertList(i,setP);
   	}
 
-	//printf("タスク番号：");
-  	//printList(setP);
-
   	p=setList(setP,createList(),0,TN-P+1);
-
-  	//printf("組み合わせ：");
-  	//printList(p);
 
   	for(set1=0;set1<calcNumOfCombination(TN,P);set1++){
     	kumi1=firstnList(p,P);
@@ -501,7 +499,6 @@ void LMCLF(){
 
 		alphauppermin=MAX,alphalowermax=0;    
 		for(i=0;i<TN;i++){
-			//alphauppermin=MAX,alphalowermax=0;
 			if(memberList(i,kumi1)==1 && state[i] == 1){  /* iタスク目が選ばれていてかつタスクが起動していたら */
 				for(j=0;j<TN;j++){
 					if(memberList(j,kumi1)==0 && state[j] == 1){  //jタスク目が選ばれていないかつタスクが起動していたら
@@ -512,7 +509,6 @@ void LMCLF(){
 							if(alphalowermax<tempalpha1){	
 		    					alphalowermax=tempalpha1;
 		    					keta1=get_digit(randma1) - get_digit(WCETLaxity1);
-								//fprintf(stderr,"1steplower 選ばれたi,jはi=%d,j=%d,alphalowermax=%lf,\n",i,j,alphalowermax);
 							}else{
 							}
 						}else{// m(i)α+Ci*Li<m(j)α+Cj*Lj && m(j)<m(i) --> (m(i)-m(j))α<Cj*Lj-Ci*Li --> α<(Cj*Lj-Ci*Li)/(m(i)-m(j))
@@ -522,7 +518,6 @@ void LMCLF(){
 							if(alphauppermin>tempalpha2){
 		    					alphauppermin=tempalpha2;
 		    					keta1=get_digit(randma1) - get_digit(WCETLaxity1);								
-								//fprintf(stderr,"1stepupper 選ばれたi,jはi=%d,j=%d,alphauppermin=%lf,\n",i,j,alphauppermin);
 							}
 						}
 					}
@@ -535,7 +530,6 @@ void LMCLF(){
 	    //fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d first\n",alphalowermax,alphauppermin,i+1);
 	    alphaupperminsav=alphauppermin; alphalowermaxsav=alphalowermax;
 
-
 		z=setList(setP,createList(),0,TN-P+1);
 
   		for(set2=0;set2<calcNumOfCombination(TN,P);set2++){
@@ -544,7 +538,6 @@ void LMCLF(){
 
 			alphauppermin=alphaupperminsav; alphalowermax=alphalowermaxsav;
 	    	for(k=0;k<TN;k++){
-	      		//alphauppermin=alphaupperminsav; alphalowermax=alphalowermaxsav;
 	    		if(memberList(k,kumi2)==1 && state[k] == 1){ /* set2のiビット目が1ならば */
 					for(l=0;l<TN;l++){
 						if(memberList(l,kumi2)==0 && state[l] == 1){  /* set2のiビット目が0ならば */
@@ -555,7 +548,6 @@ void LMCLF(){
 		    					if(alphalowermax<tempalpha1){
 									alphalowermax=tempalpha1;
 									keta2=get_digit(randma2) - get_digit(WCETLaxity2);
-									//fprintf(stderr,"2steplower:選ばれたk,lはk=%d,l=%d,alphalowermax=%lf,\n",k,l,alphalowermax);
 		    					}else{
 		    					}
 		    				}else{// m(k)α+Ck*Lk<m(l)α+Cl*Ll && m(l)<m(k) --> (m(k)-m(l))α<Cl*Ll-Ck*Lk  -->  α<(Cl*Ll-Ck*Lk)/(m(k)-m(l))
@@ -565,7 +557,6 @@ void LMCLF(){
 		    					if(alphauppermin>tempalpha2){
 									alphauppermin=tempalpha2;
 									keta2=get_digit(randma2) - get_digit(WCETLaxity2);
-									//fprintf(stderr,"2stepupper:選ばれたk,lはk=%d,l=%d,alphauppermin=%lf,\n",k,l,alphauppermin);
 		    					}
                             }
 						}
@@ -580,10 +571,11 @@ void LMCLF(){
                         s1memory=rand_memory[i][step[i]];
                     }
                 }
+
                 //1ステップ目と2ステップ目のメモリ増分の合計
                 for(i=0;i<TN;i++){
                     if(memberList(i,kumi1)==1 && state[i] == 1){ /* set1のiビット目が1ならば */
-                        for(k=0,d=0;k<TN;k++){
+                        for(k=0;k<TN;k++){
                             if(memberList(k,kumi2)==1 && state[k] == 1){ /* set2のiビット目が1ならば */
                                 s2memory=rand_memory[k][(k==i)?(step[k]+1):step[k]];
                             }
@@ -707,7 +699,7 @@ int get_digit(int n){
 	return digit;
 }
 
-List createList(void) {
+List createList(void){
   	return NIL;
 }
 

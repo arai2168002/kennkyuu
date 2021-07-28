@@ -86,6 +86,7 @@ List firstnList(List l,unsigned int n);		//リストの先頭からn番目まで
 List restnList(List l,unsigned int n);		//リストの末尾からn番目までの要素を削除
 List setList(List sourceList,List subsetList,int begin,int end);		//組み合わせの全パターンを格納したリストを返す
 int calcNumOfCombination(int n, int r);		//組み合わせの総数を返す
+int choicekumi(int array[P],int n);		//配列の中に要素nが入っているかどうかを調べる関数
 
 
 
@@ -474,7 +475,7 @@ void LMCLF(){
   	List setP=createList();
   	List p=createList();	//1ステップ目でのタスクの組み合わせの全体集合
   	List z=createList();    //２ステップ目でのタスクの組み合わせの全体集合
-  	int kumi1[P],kumi2[P];	//1.2ステップ目の選ばれたタスク集合
+  	int kumi1[P+1],kumi2[P+1];	//1.2ステップ目の選ばれたタスク集合
 	
 	pthread_mutex_lock(&mutex);
         alphadiff=0;
@@ -497,16 +498,14 @@ void LMCLF(){
     	for(c=0;c<P;c++){		//プロセッサ分組み合わせを格納し格納したものは削除
       		kumi1[c]=headList(p);
       		p=tailList(p);
-      		//printf("kumi[%d][%d]=%d\n",c,d,kumi[i][j]);
     	}
 
 		alphauppermin=MAX,alphalowermax=0;    
-		for(i=0,e=0;i<TN;i++){
+		for(i=0;i<TN;i++){
 			//alphauppermin=MAX,alphalowermax=0;
-			if(i==kumi1[e] && state[i] == 1){  /* iタスク目が選ばれていてかつタスクが起動していたら */
-				e++;
-				for(j=0,f=0;j<TN;j++){
-					if(j!=kumi1[f] && state[j] == 1){  //jタスク目が選ばれていないかつタスクが起動していたら
+			if(choicekumi(kumi1,i)==1 && state[i] == 1){  /* iタスク目が選ばれていてかつタスクが起動していたら */
+				for(j=0;j<TN;j++){
+					if(choicekumi(kumi1,j)==0 && state[j] == 1){  //jタスク目が選ばれていないかつタスクが起動していたら
 						if(rand_memory[i][step[i]] < rand_memory[j][step[j]]){// m(i)α+Ci*Li<m(j)α+Cj*Lj && m(j)>m(i) --> Ci*Li-Cj*Lj<(m(j)-m(i))α --> α>(Ci*Li-Cj*Lj)/(m(j)-m(i))
 							tempalpha1=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time)-((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time))/((rand_memory[j][step[j]])-(rand_memory[i][step[i]]));
 							WCETLaxity1=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time))/2;
@@ -527,8 +526,6 @@ void LMCLF(){
 								//fprintf(stderr,"1stepupper 選ばれたi,jはi=%d,j=%d,alphauppermin=%lf,\n",i,j,alphauppermin);
 							}
 						}
-					}else{		//jタスク目が選ばれるタスクだった場合
-						f++;
 					}
 				}
             }
@@ -536,7 +533,7 @@ void LMCLF(){
 	    if(!(alphauppermin>0 && alphalowermax < alphauppermin)){
 	    	continue;
 	    }
-	    fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d first\n",alphalowermax,alphauppermin,i+1);
+	    //fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d first\n",alphalowermax,alphauppermin,i+1);
 	    alphaupperminsav=alphauppermin; alphalowermaxsav=alphalowermax;
 
 
@@ -546,16 +543,14 @@ void LMCLF(){
     		for(d=0;d<P;d++){
       			kumi2[d]=headList(z);
       			z=tailList(z);
-      			//printf("kumi[%d][%d]=%d\n",c,d,kumi[i][j]);
     		}
 
 			alphauppermin=alphaupperminsav; alphalowermax=alphalowermaxsav;
-	    	for(k=0,g=0;k<TN;k++){
+	    	for(k=0;k<TN;k++){
 	      		//alphauppermin=alphaupperminsav; alphalowermax=alphalowermaxsav;
-	    		if(k==kumi2[g] && state[k] == 1){ /* set2のiビット目が1ならば */
-					g++;
-					for(l=0,h=0;l<TN;l++){
-						if(l!=kumi2[h] && state[l] == 1){  /* set2のiビット目が0ならば */
+	    		if(choicekumi(kumi2,k)==1 && state[k] == 1){ /* set2のiビット目が1ならば */
+					for(l=0;l<TN;l++){
+						if(choicekumi(kumi2,l)==0 && state[l] == 1){  /* set2のiビット目が0ならば */
 		    				if(rand_memory[k][(k==i)?(step[k]+1):step[k]] < rand_memory[l][(l==i)?(step[l]+1):step[l]] ){  // m(k)α+Ck*Lk<m(l)α+Cl*Ll && m(l)>m(k) --> Ck*Lk-Cl*Ll<(m(l)-m(k))α --> α>(Ck*Lk-Cl*Ll)/(m(l)-m(k))
 		    					tempalpha1=(((task_data[k].WCET - (k==i)?(step[k]+1):step[k]) * task_data[k].Laxity_Time)-((task_data[l].WCET - (l==i)?(step[l]+1):step[l]) * task_data[l].Laxity_Time))/((rand_memory[l][(l==i)?(step[l]+1):step[l]])-(rand_memory[k][(k==i)?(step[k]+1):step[k]]));	
 		    					WCETLaxity2=(((task_data[k].WCET - step[k]) * task_data[k].Laxity_Time) + ((task_data[l].WCET - step[l]) * task_data[l].Laxity_Time))/2;
@@ -576,29 +571,24 @@ void LMCLF(){
 									//fprintf(stderr,"2stepupper:選ばれたk,lはk=%d,l=%d,alphauppermin=%lf,\n",k,l,alphauppermin);
 		    					}
 		    				}	
-						}else{
-							h++;
 						}
 					}
                 }
             }
             if(alphauppermin>0 && alphalowermax < alphauppermin){ //求めたいαが条件を満たしている時
-                fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d and then task %d\n",alphalowermax,alphauppermin,i+1,k+1);
+                //fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d and then task %d\n",alphalowermax,alphauppermin,i+1,k+1);
                 //1ステップ目のメモリ増分の合計
-                for(i=0,o=0;i<TN;i++){
-                    if(i==kumi1[o] && state[i] == 1){ /* set1のiビット目が1ならば */
+                for(i=0;i<TN;i++){
+                    if(choicekumi(kumi1,i)==1 && state[i] == 1){ /* set1のiビット目が1ならば */
                         s1memory=rand_memory[i][step[i]];
-						o++;
                     }
                 }
                 //1ステップ目と2ステップ目のメモリ増分の合計
-                for(i=0,o=0;i<TN;i++){
-                    if(i==kumi1[o] && state[i] == 1){ /* set1のiビット目が1ならば */
-						o++;
-                        for(k=0,q=0;k<TN;k++){
-                            if(i==kumi2[q] && state[i] == 1){ /* set2のiビット目が1ならば */
+                for(i=0;i<TN;i++){
+                    if(choicekumi(kumi1,i)==1 && state[i] == 1){ /* set1のiビット目が1ならば */
+                        for(k=0;k<TN;k++){
+                            if(choicekumi(kumi2,k)==0 && state[k] == 1){ /* set2のiビット目が1ならば */
                                 s2memory=rand_memory[k][(k==i)?(step[k]+1):step[k]];
-								q++;
                             }
                         }
                     }
@@ -818,4 +808,15 @@ int calcNumOfCombination(int n, int r){
         num = num * (n - i + 1) / i;
     }
     return num;
+}
+
+int choicekumi(int array[P],int n){
+	int i;
+
+	for(i=0;i<P;i++){
+		if(n==array[i]){
+			return 1;
+		}
+	}
+	return 0;
 }
