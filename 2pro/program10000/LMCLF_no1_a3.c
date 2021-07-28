@@ -76,9 +76,11 @@ pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 
 
 int main(void) {
+	clock_t start_clock, end_clock;
 
 	fprintf(stderr, "\n-------------LMCLF Scheduling in %d-Processor Environment-------------\n", P);
-	
+	start_clock = clock();
+
 	int i = 0, j = 0, k1 = 0, k2 = 0;
 	
 	pthread_t Task[S];
@@ -208,11 +210,13 @@ int main(void) {
 	fprintf(fpout_LMCLF, "%d\r\n", Deadline_Miss);
 	fclose(fpout_LMCLF);
 
+	end_clock = clock();
 	fprintf(stderr, "\n-------------LMCLF Scheduling in %d-Processor Environment-------------\n\n", P);
+
+	fprintf(stderr, "\n clock：%f \n", (double)(end_clock - start_clock)/CLOCKS_PER_SEC);
 
 	return 0;
 }
-
 
 /*タスク*/
 void *thread_Tasks(void *num){
@@ -496,7 +500,7 @@ void LMCLF(){
 	    if(!(alphauppermin>0 && alphalowermax < alphauppermin)){
 	    	continue;
 	    }
-	    fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d first\n",alphalowermax,alphauppermin,i+1);
+	    //fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d first\n",alphalowermax,alphauppermin,i+1);
 	    alphaupperminsav=alphauppermin; alphalowermaxsav=alphalowermax;
 
 		for(set2=1;set2<pow(2,TN);set2++){ //2ステップ目のプロセッサ分のタスク集合
@@ -536,7 +540,7 @@ void LMCLF(){
                 }
             }
             if(alphauppermin>0 && alphalowermax < alphauppermin){ //求めたいαが条件を満たしている時
-                fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d and then task %d\n",alphalowermax,alphauppermin,i+1,k+1);
+                //fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d and then task %d\n",alphalowermax,alphauppermin,i+1,k+1);
                 //1ステップ目のメモリ増分の合計
                 for(i=0;i<TN;i++){
                     if((set1&(int)pow(2,i))!=0){ /* set1のiビット目が1ならば */
