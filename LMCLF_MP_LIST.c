@@ -234,7 +234,7 @@ int main(void) {
 	end_clock = clock();
 	fprintf(stderr, "\n-------------LMCLF Scheduling in %d-Processor Environment-------------\n\n", P);
 
-	fprintf(stderr, "\n Processing time：%f \n", (end_clock - start_clock)/CLOCKS_PER_SEC);
+	fprintf(stderr, "\n clock：%f \n", (double)(end_clock - start_clock)/CLOCKS_PER_SEC);
 
 	return 0;
 }
