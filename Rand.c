@@ -14,7 +14,7 @@
 //#define P 1										//プロセッサ数
 #define CM 1										//破棄条件の調節
 #define del_co CM*P									//タスクセットの破棄条件
-#define paramater 0.9								//指数分布のパラメータ
+#define paramater 0.1								//指数分布のパラメータ
 
 #define M_max 20000					//メモリ確保の最大値(M_max/2)
 	
