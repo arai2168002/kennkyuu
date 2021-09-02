@@ -488,19 +488,19 @@ void LMCLF(){
 	
 	pthread_mutex_lock(&mutex);
         alphadiff=0;
-	//fprintf(stderr,"a \n");
+
 	/*換算レートαの決定*/
   	for(i=TN-1;i>=0;i--){
     	setP=insertList(i,setP);
   	}
-	//fprintf(stderr,"a1 \n");
+	
   	p=setList(setP,createList(),0,TN-P+1);
 
   	for(set1=0;set1<calcNumOfCombination(TN,P);set1++){
     	kumi1=firstnList(p,P);
         p=restnList(p,P);
 
-	//fprintf(stderr,"a2 \n");
+	
 		alphauppermin=MAX,alphalowermax=0;    
 		for(i=0;i<TN;i++){
 			if(memberList(i,kumi1)==1 && state[i] == 1){  /* iタスク目が選ばれていてかつタスクが起動していたら */
@@ -528,20 +528,21 @@ void LMCLF(){
 				}
             }
         }
-
+		
 	    if(!(alphauppermin>0 && alphalowermax < alphauppermin)){
+			
 	    	continue;
 	    }
-		//fprintf(stderr,"kokomade1:\n");
+		
 	    //fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d first\n",alphalowermax,alphauppermin,i+1);
 	    alphaupperminsav=alphauppermin; alphalowermaxsav=alphalowermax;
-
+		
 		z=setList(setP,createList(),0,TN-P+1);
-
+		
   		for(set2=0;set2<calcNumOfCombination(TN,P);set2++){
             kumi2=firstnList(z,P);
             z=restnList(z,P);
-
+			
 			alphauppermin=alphaupperminsav; alphalowermax=alphalowermaxsav;
 	    	for(k=0;k<TN;k++){
 	    		if(memberList(k,kumi2)==1 && state[k] == 1){ /* kタスク目が選ばれていてかつタスクが起動していたら */
@@ -569,32 +570,34 @@ void LMCLF(){
 					}
                 }
             }
-
+			
             if(alphauppermin>0 && alphalowermax < alphauppermin){ //求めたいαが条件を満たしている時
-				//fprintf(stderr,"kokomade2:");
+				
                 //fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d and then task %d\n",alphalowermax,alphauppermin,i+1,k+1);
+
                 //1ステップ目のメモリ増分の合計
+				memory=0;
+				
                 for(i=0,s1memory=0;i<TN;i++){
                     if(memberList(i,kumi1)==1 && state[i] == 1){ /* set1のiビット目が1ならば */
                         s1memory+=rand_memory[i][step[i]];
                     }
                 }
-
+				
                 //2ステップ目のメモリ増分の合計
                 for(k=0,s2memory=0;k<TN;k++){
                     if(memberList(k,kumi2)==1 && state[k] == 1){ /* set2のiビット目が1ならば */
                         s2memory+=rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]];
                     }
                 }
-
+				
                 if(s1memory>s1memory+s2memory){  //1ステップ目のメモリ増分の合計が1ステップ目,2ステップ目のメモリ増分の合計より大きい場合
                     memory=s1memory;
                 }else{  //小さい場合
                     memory=s1memory+s2memory;
                 }
-
+				
               	if(minmemory>memory){  //今まで求めた最悪メモリ消費量よりも小さいとき
-				  	//fprintf(stderr,"kokomade3:\n");
 		    		minmemory=memory;  bestkumi1=kumi1; bestkumi2=kumi2;
 		    		if(alphauppermin<MAX){
 						if(((keta1+keta2)/2)>0){
@@ -817,6 +820,23 @@ int memberList(int element,List l){
 
 }
 
+//リストの総数を数える
+int lengthList(List l){
+
+  if(nullpList(l)){
+    return 0;
+  }else{
+    return lengthList(tailList(l))+1;
+  }
+}
+
+//リストの複製を作成
+List copyList(List l){
+
+	return firstnList(l,lengthList(l));
+
+}
+
 //選べれるタスクの選定
 List setList(List sourceList,List subsetList,int begin,int end){
   	List p=createList();
@@ -824,16 +844,18 @@ List setList(List sourceList,List subsetList,int begin,int end){
   	int i=0;
 
   	for(i=begin;i<end;i++){
-    	temp=appendList(subsetList,insertList(iList(sourceList,i),createList()));
+    	temp=copyList(appendList(subsetList,insertList(iList(sourceList,i),createList())));
 		//fprintList(p);
     	if(end+1<=TN){
-      		p=appendList(p,setList(sourceList,temp,i+1,end+1));
+      		p=copyList(appendList(p,setList(sourceList,temp,i+1,end+1)));
     	}else{
-      		p=appendList(p,temp);
+      		p=copyList(appendList(p,temp));
     	}
   	}
   	return p;
 }
+
+
 
 //組み合わせの総数を求める
 int calcNumOfCombination(int n, int r){
