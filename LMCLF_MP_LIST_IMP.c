@@ -7,12 +7,13 @@
 #define P 4 
 //#define P 2  				//プロセッサ数
 //#define P 1  				//プロセッサ数
-#define MAX 1000000000000		//起動していない時
+#define MAX 1000000000	//起動していない時
 //#define alpha 1000.0		//換算レート
 #define NIL ((List)0)
 #define S 1024
 
 int TN = 0;					//タスク数
+int valTN=P*2;				//評価値により厳選されるタスク数
 double dead_max = 0;		//相対デッドラインの最大値
 int rand_memory[S][S];		//消費メモリ増分
 double ET[S];				//Taskの1ステップの実行時間の平均（本実験では1ステップ1単位時間で実行）
@@ -31,7 +32,7 @@ int Current_Memory = 0;		//現在のメモリ消費量
 int deadline_miss_task[S];	//デッドラインミスの数
 int Deadline_Miss = 0;		//デッドラインミスの数の総和
 
-double alpha=0,alphadiff=0; //パラメータα(初期値)0、αの修正差分
+double alpha=1.0,alphadiff=0; //パラメータα(初期値)0、αの修正差分
 
 /*sort用変数*/
 double sort_priority[S];
@@ -83,11 +84,14 @@ List appendList(List l1,List l2);	//リストl1の末尾にlリストl2を連結
 int iList(List l1,int i);			//リストのi番目の要素を返す
 void printList(List l);				//リストの要素を表示
 void fprintList(List l);            //リストの全要素をファイルに出力
+int lengthList(List l);
 List firstnList(List l,unsigned int n);		//リストの先頭からn番目までの要素を削除
 List restnList(List l,unsigned int n);		//リストの末尾からn番目までの要素を削除
 int memberList(int element,List l);     //リストにその要素が含まれているかどうかを調べる関数
 void freeList(List l);		//リストのメモリ解放
 List copyList(List l);		//リストの複製を生成
+int minList(List l,int tasknum1,int tasknum2,int min);	//リストの評価値の最小値のタスク番号を返す
+List ideleatList(List l1,List l2,int i);		//先頭からi番目の要素を書き換える
 List setList(List sourceList,List subsetList,int begin,int end);		//組み合わせの全パターンを格納したリストを返す
 int calcNumOfCombination(int n, int r);		//組み合わせの総数を返す
 
@@ -479,32 +483,61 @@ void LMCLF(){
 	double randma1=0,randma2=0;	//α×消費メモリ増分
 	int keta1=0,keta2=0; //α×消費メモリ増分と残余実行時間×余裕時間の桁数を引いたもの
 	int besti,bestk;   // 最小メモリとなるiとkを記憶
+	int mintasknum;
+	int setP1num,setP2num;
 
 
-  	List setP=createList();	//タスク番号の集合
+  	List setP1=createList();	//1ステップ目の評価値が低い上位のタスク番号の集合
+	List setP2=createList();	//2ステップ目の評価値が低い上位のタスク番号の集合
+	List val1=createList();		//1ステップ目の評価値集合
+	List val2=createList();		//2ステップ目の評価値集合
+	List copyval1=createList();		//1ステップ目の評価値集合
+	List copyval2=createList();		//1ステップ目の評価値集合
   	List Aset1=createList();	//1ステップ目でのタスクの組み合わせの全体集合
 	List Aset2=createList();    //２ステップ目でのタスクの組み合わせの全体集合
+	List Aset1orig=createList();	//Aset1の先頭ポインタを記憶
 	List Aset2orig=createList();	//Aset2の先頭ポインタを記憶
     List kumi1=createList();		//1ステップ目でのタスクの組み合わせ部分集合
     List kumi2=createList();		//2ステップ目でのタスクの組み合わせ部分集合
 	List bestkumi1=createList();	//1ステップ目での最小メモリとなるタスクの組み合わせを記憶
 	List bestkumi2=createList();	//2ステップ目での最小メモリとなるタスクの組み合わせを記憶
+
 	
 	pthread_mutex_lock(&mutex);
         alphadiff=0;
 
 	/*換算レートαの決定*/
-  	for(i=TN-1;i>=0;i--){
-    	setP=insertList(i,setP);
+  	for(i=TN-1;i>=0;i--){//val1に評価値を格納
+	  if(state[i]==1){
+		val1=insertList((task_data[i].WCET - step[i]) * (task_data[i].Laxity_Time) + (alpha * rand_memory[i][step[i]]),val1);
+	  }else{
+		val1=insertList(MAX,val1);
+	  }
   	}
-	
-	fprintf(stderr,"------%d task %d prossesor------\n",TN,P);
-  	Aset1=setList(setP,createList(),0,TN-P+1);
 
-  	for(set1=0;set1<calcNumOfCombination(TN,P);set1++){
+	fprintList(val1);
+	for(i=0;i<valTN;i++){//評価値が小さいタスク番号を格納
+		mintasknum=minList(val1,0,-1,MAX);
+		if(mintasknum!=-1){
+			setP1=insertList(mintasknum,setP1);
+			copyval1=val1;
+			val1=ideleatList(val1,copyval1,mintasknum);
+		}
+	}
+	
+	setP1num=lengthList(setP1);
+	freeList(copyval1);
+	fprintf(stderr,"探索範囲を狭めたタスク番号"); fprintList(setP1);
+	//fprintf(stderr,"------%d task %d prossesor------\n",TN,P);
+  	Aset1=setList(setP1,createList(),0,setP1num-P+1);
+	fprintList(Aset1);
+	freeList(setP1);
+
+  	for(set1=0;set1<calcNumOfCombination(setP1num,P);set1++){
 		if(!nullpList(kumi1)){
 			freeList(kumi1);
 		}
+
     	kumi1=firstnList(Aset1,P);
         Aset1=restnList(Aset1,P);
 		//fprintf(stderr,"kumi1 %d組目:",set1); fprintList(kumi1);
@@ -548,13 +581,33 @@ void LMCLF(){
 		//	fprintf(stderr,"ここまで来てるぜ万治#1\n");
 		//}
 
-		Aset2=setList(setP,createList(),0,TN-P+1);
+		for(i=TN-1;i>=0;i--){//val2に評価値を格納
+			if(state[i]==1){
+				val2=insertList((task_data[i].WCET - (memberList(i,kumi1)==1)?(step[i]+1):step[i]) * (task_data[i].Laxity_Time) + (alpha * rand_memory[i][(memberList(i,kumi1)==1)?(step[i]+1):step[i]]),val1);
+			}else{
+				val2=insertList(MAX,val2);
+			}
+		}
+
+		for(i=0;i<valTN;i++){//評価値が小さいタスク番号を格納
+			mintasknum=minList(val2,0,-1,MAX);
+			if(mintasknum!=-1){
+			setP2=insertList(mintasknum,setP2);
+			copyval2=val2;
+			val2=ideleatList(val2,copyval2,mintasknum);
+			}
+		}
+		freeList(copyval2);
+
+		setP2num=lengthList(setP2);
+
+		Aset2=setList(setP2,createList(),0,setP2num-P+1);
 		Aset2orig=Aset2;
 		/*if(set1>4800){
 			fprintf(stderr,"ここまで来てるぜ万治#2\n");
 		}*/
 
-  		for(set2=0;set2<calcNumOfCombination(TN,P);set2++){
+  		for(set2=0;set2<calcNumOfCombination(setP2num,P);set2++){
 			if(!nullpList(kumi2)){
 			freeList(kumi2);
 			}
@@ -620,7 +673,7 @@ void LMCLF(){
                 }
 				
               	if(minmemory>memory){  //今まで求めた最悪メモリ消費量よりも小さいとき
-		    		minmemory=memory;  bestkumi1=kumi1; bestkumi2=kumi2;
+		    		minmemory=memory;  bestkumi1=copyList(kumi1); bestkumi2=copyList(kumi2);
 		    		if(alphauppermin<MAX){
 						if(((keta1+keta2)/2)>0){
 							alpha=((alphalowermax + alphauppermin)/2)/(pow(10,(keta1+keta2)/2));
@@ -638,7 +691,8 @@ void LMCLF(){
 			}			
 		}
 		freeList(Aset2orig);
-   	}		
+   	}
+	freeList(Aset1orig);	
 		
 		
 	
@@ -789,6 +843,16 @@ int iList(List l1,int i){
 
 }
 
+//先頭からi番目の要素を書き換える
+List ideleatList(List l1,List l2,int i){
+  	if(i==0){
+		l1->element=MAX;
+    	return l2;
+  	}else{
+    	return ideleatList(tailList(l1),l2,i-1);
+  	}
+
+}
 //リストの全要素を表示
 void printList(List l) {
 
@@ -810,6 +874,7 @@ void fprintList(List l) {
     	fprintList(tailList(l));
   	}
 }
+
 
 //先頭からn番目までの要素をリストに入れて返す
 List firstnList(List l,unsigned int n){
@@ -872,6 +937,19 @@ List copyList(List l){
 
 }
 
+//リストの評価値が最小であるタスク番号を返す関数
+int minList(List l,int tasknum1,int tasknum2,int min){
+	if(nullpList(l)){
+		return tasknum2;
+	}else if(headList(l)<min){
+		min=headList(l);
+		tasknum2=tasknum1;
+		return minList(tailList(l),++tasknum1,tasknum2,min);
+	}else{
+		return minList(tailList(l),++tasknum1,tasknum2,min);
+	}
+}
+
 //選ばれるタスクの選定
 List setList(List sourceList,List subsetList,int begin,int end){
   	List p=createList();
@@ -881,7 +959,7 @@ List setList(List sourceList,List subsetList,int begin,int end){
 
   	for(i=begin;i<end;i++){
     	temp=copyList(appendList(subsetList,insertList(iList(sourceList,i),createList())));
-    	if(end+1<=TN){
+    	if(end+1<=lengthList(sourceList)){
 			oldp=p;
       		p=copyList(appendList(p,setList(sourceList,temp,i+1,end+1)));
 			freeList(oldp);
