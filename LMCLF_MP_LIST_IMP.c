@@ -483,8 +483,8 @@ void LMCLF(){
 	double randma1=0,randma2=0;	//α×消費メモリ増分
 	int keta1=0,keta2=0; //α×消費メモリ増分と残余実行時間×余裕時間の桁数を引いたもの
 	int besti,bestk;   // 最小メモリとなるiとkを記憶
-	int mintasknum;
-	int setP1num,setP2num;
+	int mintasknum=0;	//評価値が最小となるタスク番号
+	int setP1num=0,setP2num=0;	//1,2ステップ目の評価値が低い上位のタスク番号の集合の要素数
 
 
   	List setP1=createList();	//1ステップ目の評価値が低い上位のタスク番号の集合
@@ -492,7 +492,7 @@ void LMCLF(){
 	List val1=createList();		//1ステップ目の評価値集合
 	List val2=createList();		//2ステップ目の評価値集合
 	List copyval1=createList();		//1ステップ目の評価値集合
-	List copyval2=createList();		//1ステップ目の評価値集合
+	List copyval2=createList();		//2ステップ目の評価値集合
   	List Aset1=createList();	//1ステップ目でのタスクの組み合わせの全体集合
 	List Aset2=createList();    //２ステップ目でのタスクの組み合わせの全体集合
 	List Aset1orig=createList();	//Aset1の先頭ポインタを記憶
@@ -515,7 +515,7 @@ void LMCLF(){
 	  }
   	}
 
-	fprintList(val1);
+	fprintf(stderr,"val1:"); fprintList(val1);
 	for(i=0;i<valTN;i++){//評価値が小さいタスク番号を格納
 		mintasknum=minList(val1,0,-1,MAX);
 		if(mintasknum!=-1){
@@ -527,10 +527,10 @@ void LMCLF(){
 	
 	setP1num=lengthList(setP1);
 	freeList(copyval1);
-	fprintf(stderr,"探索範囲を狭めたタスク番号"); fprintList(setP1);
+	fprintf(stderr,"step1探索範囲を狭めたタスク番号:"); fprintList(setP1);
 	//fprintf(stderr,"------%d task %d prossesor------\n",TN,P);
   	Aset1=setList(setP1,createList(),0,setP1num-P+1);
-	fprintList(Aset1);
+	fprintf(stderr,"step1タスク番号集合:"); fprintList(Aset1);
 	freeList(setP1);
 
   	for(set1=0;set1<calcNumOfCombination(setP1num,P);set1++){
@@ -540,7 +540,7 @@ void LMCLF(){
 
     	kumi1=firstnList(Aset1,P);
         Aset1=restnList(Aset1,P);
-		//fprintf(stderr,"kumi1 %d組目:",set1); fprintList(kumi1);
+		fprintf(stderr,"kumi1 %d組目:",set1); fprintList(kumi1);
 	
 		alphauppermin=MAX,alphalowermax=0;    
 		for(i=0;i<TN;i++){
@@ -571,24 +571,24 @@ void LMCLF(){
         }
 		
 	    if(!(alphauppermin>0 && alphalowermax < alphauppermin)){
-			
 	    	continue;
 	    }
 		
 	    //fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d first\n",alphalowermax,alphauppermin,i+1);
 	    alphaupperminsav=alphauppermin; alphalowermaxsav=alphalowermax;
-		//if(set1>4800){
-		//	fprintf(stderr,"ここまで来てるぜ万治#1\n");
-		//}
 
+		val2=createList();
 		for(i=TN-1;i>=0;i--){//val2に評価値を格納
 			if(state[i]==1){
-				val2=insertList((task_data[i].WCET - (memberList(i,kumi1)==1)?(step[i]+1):step[i]) * (task_data[i].Laxity_Time) + (alpha * rand_memory[i][(memberList(i,kumi1)==1)?(step[i]+1):step[i]]),val1);
+				val2=insertList((((task_data[i].WCET - (memberList(i,kumi1)==1)?(step[i]+1):step[i]) * (task_data[i].Laxity_Time)) + (alpha * rand_memory[i][(memberList(i,kumi1)==1)?(step[i]+1):step[i]])),val2);
 			}else{
 				val2=insertList(MAX,val2);
 			}
 		}
 
+		fprintf(stderr,"val2:"); fprintList(val2);
+
+		setP2=createList();
 		for(i=0;i<valTN;i++){//評価値が小さいタスク番号を格納
 			mintasknum=minList(val2,0,-1,MAX);
 			if(mintasknum!=-1){
@@ -600,12 +600,13 @@ void LMCLF(){
 		freeList(copyval2);
 
 		setP2num=lengthList(setP2);
+		fprintf(stderr,"step2探索範囲を狭めたタスク番号:"); fprintList(setP2);
 
 		Aset2=setList(setP2,createList(),0,setP2num-P+1);
+		fprintf(stderr,"step2タスク番号集合:"); fprintList(Aset2);
+		freeList(setP2);
+
 		Aset2orig=Aset2;
-		/*if(set1>4800){
-			fprintf(stderr,"ここまで来てるぜ万治#2\n");
-		}*/
 
   		for(set2=0;set2<calcNumOfCombination(setP2num,P);set2++){
 			if(!nullpList(kumi2)){
@@ -613,10 +614,6 @@ void LMCLF(){
 			}
             kumi2=firstnList(Aset2,P);
             Aset2=restnList(Aset2,P);
-
-			/*if(set1>4800){
-			fprintf(stderr,"kumi2 %d組目:",set2); fprintList(kumi2);
-			}*/
 
 			alphauppermin=alphaupperminsav; alphalowermax=alphalowermaxsav;
 	    	for(k=0;k<TN;k++){
