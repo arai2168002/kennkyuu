@@ -16,7 +16,7 @@
 #define del_co CM*P									//タスクセットの破棄条件
 #define paramater 0.9								//指数分布のパラメータ
 
-#define M_max 20000					//メモリ確保の最大値(M_max/2)
+#define M_max 200000					//メモリ確保の最大値(M_max/2)
 	
 #define P_max 1000									//周期の最大値
 #define P_min 100									//周期の最小値

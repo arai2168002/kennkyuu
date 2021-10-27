@@ -11,6 +11,7 @@
 //#define alpha 1000.0		//換算レート
 #define NIL ((List)0)
 #define S 1024
+#define MLOG10(x) ((x==0)?(0):(log10(fabs(x))))
 
 int TN = 0;					//タスク数
 int valTN=P*2;				//評価値により厳選されるタスク数
@@ -481,12 +482,13 @@ void LMCLF(){
 	double tempalpha1=0,tempalpha2=0;  //仮のαの上限下限格納関数
 	double WCETLaxity1=0,WCETLaxity2=0; //残余実行時間×余裕時間
 	double randma1=0,randma2=0;	//α×消費メモリ増分
-	int keta1=0,keta2=0; //α×消費メモリ増分と残余実行時間×余裕時間の桁数を引いたもの
-	int valketa=0;	//評価値計算のための桁数を調整するためのもの
+	double keta1=0,keta2=0; //α×消費メモリ増分と残余実行時間×余裕時間の桁数を引いたもの
+	double valketa=0;	//評価値計算のための桁数を調整するためのもの
 	int besti,bestk;   // 最小メモリとなるiとkを記憶
 	int mintasknum=0;	//評価値が最小となるタスク番号
 	int setP1num=0,setP2num=0;	//1,2ステップ目の評価値が低い上位のタスク番号の集合の要素数
-	int Laxityjudge=0;	//余裕時間が0かどうかを判定するための数
+	double Laxityjudge=0;	//余裕時間の桁数を判定するための数
+	double NewLaxityjudge=0;
 
 
   	List setP1=createList();	//1ステップ目の評価値が低い上位のタスク番号の集合
@@ -561,20 +563,20 @@ void LMCLF(){
 					if(memberList(j,kumi1)==0 && state[j] == 1){  //jタスク目が選ばれていないかつタスクが起動していたら
 						if(rand_memory[i][step[i]] < rand_memory[j][step[j]]){// m(i)α+Ci*Li<m(j)α+Cj*Lj && m(j)>m(i) --> Ci*Li-Cj*Lj<(m(j)-m(i))α --> α>(Ci*Li-Cj*Lj)/(m(j)-m(i))
 							tempalpha1=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time)-((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time))/((rand_memory[j][step[j]])-(rand_memory[i][step[i]]));
-							WCETLaxity1=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time))/2;
-							randma1=((fabs(tempalpha1)*fabs(rand_memory[i][step[i]])) + (fabs(tempalpha1)*fabs(rand_memory[j][step[j]])))/2;
+							//WCETLaxity1=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time))/2;
+							//randma1=((fabs(tempalpha1)*fabs(rand_memory[i][step[i]])) + (fabs(tempalpha1)*fabs(rand_memory[j][step[j]])))/2;
 							if(alphalowermax<tempalpha1){	
 		    					alphalowermax=tempalpha1;
-		    					keta1=get_digit(randma1) - get_digit(WCETLaxity1);
+		    					//keta1=MLOG10(WCETLaxity1) - MLOG10(randma1);
 							}else{
 							}
 						}else{// m(i)α+Ci*Li<m(j)α+Cj*Lj && m(j)<m(i) --> (m(i)-m(j))α<Cj*Lj-Ci*Li --> α<(Cj*Lj-Ci*Li)/(m(i)-m(j))
 							tempalpha2=(((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time)-((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time))/((rand_memory[i][step[i]])-(rand_memory[j][step[j]]));
-							WCETLaxity1=(((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time) + ((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time))/2;
-							randma1=((fabs(tempalpha2)*fabs(rand_memory[i][step[i]])) + (fabs(tempalpha2)*fabs(rand_memory[j][step[j]])))/2;
+							//WCETLaxity1=(((task_data[j].WCET - step[j]) * task_data[j].Laxity_Time) + ((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time))/2;
+							//randma1=((fabs(tempalpha2)*fabs(rand_memory[i][step[i]])) + (fabs(tempalpha2)*fabs(rand_memory[j][step[j]])))/2;
 							if(alphauppermin>tempalpha2){
 		    					alphauppermin=tempalpha2;
-		    					keta1=get_digit(randma1) - get_digit(WCETLaxity1);								
+		    					//keta1=MLOG10(WCETLaxity1) - MLOG10(randma1);								
 							}
 						}
 					}
@@ -643,20 +645,20 @@ void LMCLF(){
 						if(memberList(l,kumi2)==0 && state[l] == 1){  /* lタスク目が選ばれていないかつタスクが起動していたら */
 		    				if(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] < rand_memory[l][(memberList(l,kumi1)==1)?(step[l]+1):step[l]] ){  // m(k)α+Ck*Lk<m(l)α+Cl*Ll && m(l)>m(k) --> Ck*Lk-Cl*Ll<(m(l)-m(k))α --> α>(Ck*Lk-Cl*Ll)/(m(l)-m(k))
 		    					tempalpha1=(((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time)-((task_data[l].WCET - (memberList(l,kumi1)==1)?(step[l]+1):step[l]) * task_data[l].Laxity_Time))/((rand_memory[l][(memberList(l,kumi1)==1)?(step[l]+1):step[l]])-(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]]));	
-		    					WCETLaxity2=(((task_data[k].WCET - step[k]) * task_data[k].Laxity_Time) + ((task_data[l].WCET - step[l]) * task_data[l].Laxity_Time))/2;
-		    					randma2=((fabs(tempalpha1) * fabs(rand_memory[k][step[k]])) + (fabs(tempalpha1)*fabs(rand_memory[l][step[l]])))/2;
+		    					//WCETLaxity2=(((task_data[k].WCET - step[k]) * task_data[k].Laxity_Time) + ((task_data[l].WCET - step[l]) * task_data[l].Laxity_Time))/2;
+		    					//randma2=((fabs(tempalpha1) * fabs(rand_memory[k][step[k]])) + (fabs(tempalpha1)*fabs(rand_memory[l][step[l]])))/2;
 		    					if(alphalowermax<tempalpha1){
 									alphalowermax=tempalpha1;
-									keta2=get_digit(randma2) - get_digit(WCETLaxity2);
+									//keta2=MLOG10(WCETLaxity2) - MLOG10(randma2);
 		    					}else{
 		    					}
 		    				}else{// m(k)α+Ck*Lk<m(l)α+Cl*Ll && m(l)<m(k) --> (m(k)-m(l))α<Cl*Ll-Ck*Lk  -->  α<(Cl*Ll-Ck*Lk)/(m(k)-m(l))
 		    					tempalpha2=(((task_data[l].WCET - (memberList(l,kumi1)==1)?(step[l]+1):step[l]) * task_data[l].Laxity_Time)-((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time))/((rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]])-(rand_memory[l][(memberList(l,kumi1)==1)?(step[l]+1):step[l]]));	
-		    					WCETLaxity2=(((task_data[l].WCET - step[l]) * task_data[l].Laxity_Time) + ((task_data[k].WCET - step[k]) * task_data[k].Laxity_Time))/2;
-		    					randma2=((fabs(tempalpha2)*fabs(rand_memory[l][step[l]])) + (fabs(tempalpha2)*fabs(rand_memory[k][step[k]])))/2;
+		    					//WCETLaxity2=(((task_data[l].WCET - step[l]) * task_data[l].Laxity_Time) + ((task_data[k].WCET - step[k]) * task_data[k].Laxity_Time))/2;
+		    					//randma2=((fabs(tempalpha2)*fabs(rand_memory[l][step[l]])) + (fabs(tempalpha2)*fabs(rand_memory[k][step[k]])))/2;
 		    					if(alphauppermin>tempalpha2){
 									alphauppermin=tempalpha2;
-									keta2=get_digit(randma2) - get_digit(WCETLaxity2);
+									//keta2=MLOG10(WCETLaxity2) - MLOG10(randma2);
 		    					}
                             }
 						}
@@ -672,26 +674,34 @@ void LMCLF(){
                 //1ステップ目の評価値の合計
                 for(i=0,s1val=0;i<TN;i++){
                     if(memberList(i,kumi1)==1 && state[i] == 1){ /* set1のiビット目が1ならば */
-						valketa=get_digit(rand_memory[i][step[i]]) - get_digit((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time);
+						valketa=MLOG10((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) - MLOG10(rand_memory[i][step[i]]);
                         s1val+=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((1.0 * pow(10,valketa)) * rand_memory[i][step[i]]));
                     }
-					if(get_digit(task_data[i].Laxity_Time)==2){
-						Laxityjudge=1;
-					}else if(get_digit(task_data[i].Laxity_Time)==1){
-						Laxityjudge=2;
+					if(task_data[i].Laxity_Time!=0){
+						NewLaxityjudge= 1 / MLOG10(task_data[i].Laxity_Time);
+					}else{
+						NewLaxityjudge=MAX;
+					}
+
+					if(NewLaxityjudge>Laxityjudge){
+						Laxityjudge=NewLaxityjudge;
 					}
                 }
 				
                 //2ステップ目の評価値の合計
                 for(k=0,s2val=0;k<TN;k++){
                     if(memberList(k,kumi2)==1 && state[k] == 1){ /* set2のiビット目が1ならば */
-						valketa=get_digit(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]]) - get_digit((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[i]) * task_data[k].Laxity_Time);
+						valketa= MLOG10((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[i]) * task_data[k].Laxity_Time) - MLOG10(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]]);
                         s2val+=((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) + ((1.0 * pow(10,valketa)) * rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]]);
                     }
-					if(get_digit(task_data[k].Laxity_Time)==2){
-						Laxityjudge=1;
-					}else if(get_digit(task_data[k].Laxity_Time)==1){
-						Laxityjudge=2;
+					if(task_data[k].Laxity_Time!=0){
+						NewLaxityjudge= 1 / MLOG10(task_data[k].Laxity_Time);
+					}else{
+						NewLaxityjudge=MAX;
+					}
+
+					if(NewLaxityjudge>Laxityjudge){
+						Laxityjudge=NewLaxityjudge;
 					}
                 }
 				
@@ -703,14 +713,10 @@ void LMCLF(){
 				
               	if(minval>val){  //今まで求めた最小の評価値よりも小さいとき
 		    		minval=val;  bestkumi1=copyList(kumi1); bestkumi2=copyList(kumi2);
-		    		if(alphauppermin<MAX && Laxityjudge==0){
-        				alpha=((alphalowermax + alphauppermin)/2)/(pow(10,fabs(keta1+keta2)/2));
-		    		}else if(alphauppermin>=MAX && Laxityjudge==0){
-						alpha=(alphalowermax)/(pow(10,fabs(keta1+keta2)/2));
-	    			}else if(alphauppermin<MAX && Laxityjudge!=0){
-						alpha=(((alphalowermax + alphauppermin)/2)/(pow(10,fabs(keta1+keta2)/2)))/pow(10,Laxityjudge);
+	    			if(alphauppermin<MAX){//余裕時間が0より多きときLaxityjudgeの大きさによってαを調整し時間を優先
+						alpha=(((alphalowermax + alphauppermin)/2)/(pow(10,Laxityjudge)));
 					}else{
-						alpha=((alphalowermax)/(pow(10,fabs(keta1+keta2)/2)))/pow(10,Laxityjudge);
+						alpha=((alphalowermax)/(pow(10,Laxityjudge)));
 					}
 				}
 			}			
@@ -722,10 +728,11 @@ void LMCLF(){
 		
 	
 	fprintf(stderr,"oldalpha=%lf, alphadiff=%lf\n",alpha,alphadiff);
-	fprintf(stderr,"newalpha=%lf\n",alpha);
 	fprintf(stderr,"step1:"); fprintList(bestkumi1);
+	fprintf(stderr,"newalpha=%lf\n",alpha);
 	fprintf(stderr,"step2:"); fprintList(bestkumi2);
 	fprintf(stderr,"minval=%lf \n",minval);
+	fprintf(stderr,"Laxityjudge=%lf \n",Laxityjudge);
 	pthread_mutex_unlock(&mutex);
 
 		
