@@ -7,7 +7,7 @@
 #include <time.h>
 
 //#define P 2  	
-#define P 1			//プロセッサ数
+#define P 4			//プロセッサ数
 #define MAX 1000000000		//起動していない時
 #define S 1024
 
