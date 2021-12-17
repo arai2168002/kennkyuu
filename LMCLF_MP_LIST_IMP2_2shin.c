@@ -9,9 +9,11 @@
 //#define P 1  				//プロセッサ数
 #define MAX 1000000000	//起動していない時
 //#define alpha 1000.0		//換算レート
+//long long int MAX=10000000000000000; 
 #define NIL ((List)0)
 #define S 1024
 #define MLOG10(x) ((x==0)?(0):(log10(fabs(x))))
+#define TFD(n) n*pow(10,5)		//Trans_fixed_decimals(n); 固定小数点数に変換
 
 int TN = 0;					//タスク数
 int valTN=P*2;				//評価値により厳選されるタスク数
@@ -95,7 +97,8 @@ int minList(List l,int tasknum1,int tasknum2,int min);	//リストの評価値�
 List ideleatList(List l1,List l2,int i);		//先頭からi番目の要素を書き換える
 List setList(List sourceList,List subsetList,int begin,int end);		//組み合わせの全パターンを格納したリストを返す
 int calcNumOfCombination(int n, int r);		//組み合わせの総数を返す
-int shiftoperationtimes(unsigned int n,int t);		//シフト演算により桁数を取得
+int shiftoperationtimes(int n);		//シフト演算により桁数を取得
+int Trans_fixed_decimals(double n);		//固定小数点数に変換
 
 
 
@@ -479,15 +482,14 @@ void LMCLF(){
 	int set1=0,set2=0; //1,2ステップ目のタスクの組み合わせ数
 	double alphauppermin=MAX,alphalowermax=0;   //αの範囲最大最小
 	double alphaupperminsav=MAX,alphalowermaxsav=0;   //αの範囲最大最小(保存用)
-	double alphadec=0;		//alphaの小数部分
     double s1val=0,s2val=0;  //1ステップ目,2ステップ目の評価値の合計
 	double tempalpha1=0,tempalpha2=0;  //仮のαの上限下限格納関数
 	int valketa=0;	//評価値計算のための桁数を調整するためのもの
 	int besti,bestk;   // 最小メモリとなるiとkを記憶
 	int mintasknum=0;	//評価値が最小となるタスク番号
 	int setP1num=0,setP2num=0;	//1,2ステップ目の評価値が低い上位のタスク番号の集合の要素数
-	double Laxityjudge=0;	//余裕時間判定するための数
-	double NewLaxityjudge=0;	//仮の余裕時間判定するための数
+	double Laxityjudge=MAX;	//余裕時間判定するための数
+	double NewLaxityjudge=MAX;	//仮の余裕時間判定するための数
 
   	List setP1=createList();	//1ステップ目の評価値が低い上位のタスク番号の集合
 	List setP2=createList();	//2ステップ目の評価値が低い上位のタスク番号の集合
@@ -507,15 +509,16 @@ void LMCLF(){
 	
 	pthread_mutex_lock(&mutex);
         alphadiff=0;
+		minval=MAX;	
 
 	/*換算レートαの決定*/
   	for(i=TN-1;i>=0;i--){//val1に評価値を格納
 	  if(state[i]==1){
-		fprintf(stderr,"%d L=%lf",shiftoperationtimes(task_data[i].Laxity_Time,0),task_data[i].Laxity_Time);
+		fprintf(stderr,"%d L=%lf",shiftoperationtimes(task_data[i].Laxity_Time),task_data[i].Laxity_Time);
 		//メモリと時間の桁数を合わせることで仮のαを求めそれを用い評価値の計算
-		valketa=shiftoperationtimes((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time,0) - shiftoperationtimes(rand_memory[i][step[i]],0);
-		val1=insertList(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((valketa>=0)?(rand_memory[i][step[i]] << valketa):(rand_memory[i][step[i]] >> abs(valketa))),val1);
-		//val1=insertList(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + (alpha * rand_memory[i][step[i]]),val1);
+		//valketa=shiftoperationtimes((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) - shiftoperationtimes(rand_memory[i][step[i]]);
+		//val1=insertList(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((valketa>=0)?(rand_memory[i][step[i]] << valketa):(rand_memory[i][step[i]] >> abs(valketa))),val1);
+		val1=insertList(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + (alpha * rand_memory[i][step[i]]),val1);
 	  }else{
 		val1=insertList(MAX,val1);
 	  }
@@ -587,9 +590,9 @@ void LMCLF(){
 		for(k=TN-1,val2=createList();k>=0;k--){//val2に評価値を格納
 			if(state[k]==1){
 				//メモリと時間の桁数を合わせることで仮のαを求めそれを用い評価値の計算
-				valketa=shiftoperationtimes((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time,0) - shiftoperationtimes(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]],0);
-				val2=insertList(((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) + (valketa>=0)?(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] << valketa):(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] >> abs(valketa)),val2);
-				//val2=insertList((((task_data[i].WCET - (memberList(i,kumi1)==1)?(step[i]+1):step[i]) * task_data[i].Laxity_Time) + (alpha * rand_memory[i][(memberList(i,kumi1)==1)?(step[i]+1):step[i]])),val2);
+				//valketa=shiftoperationtimes((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) - shiftoperationtimes(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]]);
+				//val2=insertList(((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) + (valketa>=0)?(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] << valketa):(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] >> abs(valketa)),val2);
+				val2=insertList((((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) + (alpha * rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]])),val2);
 			}else{
 				val2=insertList(MAX,val2);
 			}
@@ -655,39 +658,43 @@ void LMCLF(){
             if(alphauppermin>0 && alphalowermax < alphauppermin){ //求めたいαが条件を満たしている時
                 //fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d and then task %d\n",alphalowermax,alphauppermin,i+1,k+1);
 				val=0;
-				Laxityjudge=0;
+				Laxityjudge=MAX;
                 //1ステップ目の評価値の合計
                 for(i=0,s1val=0;i<TN;i++){
                     if(memberList(i,kumi1)==1 && state[i] == 1){ /* set1のiビット目が1ならば */
-						valketa=shiftoperationtimes((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time,0) - shiftoperationtimes(rand_memory[i][step[i]],0);
-                        s1val+=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((valketa>=0)?(rand_memory[i][step[i]] << valketa):(rand_memory[i][step[i]] >> abs(valketa))));
-                    }
+						//valketa=shiftoperationtimes((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) - shiftoperationtimes(rand_memory[i][step[i]]);
+                        //s1val+=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((valketa>=0)?(rand_memory[i][step[i]] << valketa):(rand_memory[i][step[i]] >> abs(valketa))));
+						s1val+=((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + (alpha * rand_memory[i][step[i]]);
+                    
 
-					if(task_data[i].Laxity_Time!=0){
-						NewLaxityjudge= 2 /shiftoperationtimes(task_data[i].Laxity_Time,0);
-					}else{
-						NewLaxityjudge=MAX;
-					}
+						if(task_data[i].Laxity_Time!=0){
+							NewLaxityjudge=shiftoperationtimes(task_data[i].Laxity_Time);
+						}else{
+							NewLaxityjudge=0;
+						}
 
-					if(NewLaxityjudge>Laxityjudge){
-						Laxityjudge=NewLaxityjudge;
+						if(NewLaxityjudge<Laxityjudge){
+							Laxityjudge=NewLaxityjudge;
+						}
 					}
                 }
 
-                //2ステップ目の評価値の合計
+                //2ステップ目の評価値の合計とLaxityjudgeの設定
                 for(k=0,s2val=0;k<TN;k++){
-                    if(memberList(k,kumi2)==1 && state[k] == 1){ /* set2のiビット目が1ならば */
-						valketa=shiftoperationtimes((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time,0) - shiftoperationtimes(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]],0);
-                        s2val+=((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) + (valketa>=0)?(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] << valketa):(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] >> abs(valketa));
-                    }
-					if(task_data[k].Laxity_Time!=0){
-						NewLaxityjudge= 2 / shiftoperationtimes(task_data[k].Laxity_Time,0);
-					}else{
-						NewLaxityjudge=MAX;
-					}
+                    if(memberList(k,kumi2)==1 && state[k] == 1){ /* set2のiビット目が1ならばs2valに評価値を格納 */
+						//valketa=shiftoperationtimes((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) - shiftoperationtimes(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]]);
+                        //s2val+=((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) + (valketa>=0)?(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] << valketa):(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] >> abs(valketa));
+						s2val+=(((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) + (alpha * rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]]));
+                    
+						if(task_data[k].Laxity_Time!=0){//0になるまでシフト演算してその回数が少ないほどLaxityjudgeを大きくして逆の場合は小さくしたい
+							NewLaxityjudge=shiftoperationtimes(task_data[k].Laxity_Time);
+						}else{
+							NewLaxityjudge=0;
+						}
 
-					if(NewLaxityjudge>Laxityjudge){
-						Laxityjudge=NewLaxityjudge;
+						if(NewLaxityjudge<Laxityjudge){
+							Laxityjudge=NewLaxityjudge;
+						}
 					}
                 }
 
@@ -699,12 +706,12 @@ void LMCLF(){
 				
               	if(minval>val){  //今まで求めた最小の評価値よりも小さいとき
 		    		minval=val;  bestkumi1=copyList(kumi1); bestkumi2=copyList(kumi2);
-	    			if(alphauppermin<MAX){//余裕時間の大きさによってαの値を調整
-						alphadec=((alphalowermax + alphauppermin)/2) - (int)((alphalowermax + alphauppermin)/2);
-						alpha=(((int)(alphalowermax + alphauppermin)/2) >> (int)Laxityjudge) + pow(1/10,Laxityjudge) * alphadec;
+	    			if(alphauppermin<MAX && Laxityjudge!=0){//αの下限の最大値がMAXより小さい場合αの下限の最大値と上限の最小値を足して2で割った値をαの候補とし、さらに余裕時間の大きさによってαの値を調整
+						alpha=(((int)(alphalowermax + alphauppermin)/2) << (int)Laxityjudge);
+					}else if(alphauppermin>=MAX && Laxityjudge!=0){//さもなければαの下限の最大値をαの候補とし、さらに余裕時間の大きさによってαの値を調整
+						alpha=((int)(alphalowermax) << (int)Laxityjudge);
 					}else{
-						alphadec=(alphalowermax) - (int)(alphalowermax);
-						alpha=((int)(alphalowermax) >> (int)Laxityjudge) + pow(1/10,Laxityjudge) * alphadec;
+						alpha=0;
 					}
 				}
 			}			
@@ -1009,11 +1016,17 @@ int calcNumOfCombination(int n, int r){
 }
 
 //シフト演算によりシフトする回数を取得
-int shiftoperationtimes(unsigned int n,int t){
-	if(n==0){
-		return t;
+int shiftoperationtimes(int n){
+	if(n==0 || n==-1){
+		return 0;
 	}else{
-		n = n >> 1;
-		shiftoperationtimes(n,++t);
+		return 1 + shiftoperationtimes(n >> 1);
 	}
 }
+
+//固定小数点に変換
+int Trans_fixed_decimals(double n){
+	int r=4;
+
+	return (int)(n*pow(10,r));
+}	

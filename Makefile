@@ -1,6 +1,6 @@
-TARGETS = Rand.exe EDF.exe EDZL.exe LLF.exe LMCF.exe LMCLF_no1.exe LMCLF_no1_a.exe LMCLF_no1_a2.exe LMCLF_no1_a3.exe LMCLF_MP.exe LMCLF_MP_LIST.exe LMCLF_MP_LIST_IMP.exe LMCLF_MP_LIST_IMP2.exe LMCLF_MP_LIST_IMP2_2shin.exe LMCLF_no2.exe LMCLF_no3.exe AcII_LMCF.exe AcII_LMCLF_no1.exe AcII_LMCLF_no2.exe AcII_LMCLF_no3.exe LLF_LMCLF_no1.exe LLF_LMCLF_no2.exe LLF_LMCLF_no3.exe LLF_AcII_LMCLF_no1.exe LLF_AcII_LMCLF_no2.exe LLF_AcII_LMCLF_no3.exe Result.exe
+TARGETS = Rand.exe EDF.exe EDZL.exe LLF.exe LMCF.exe LMCLF_no1.exe LMCLF_no1_a.exe LMCLF_no1_a2.exe LMCLF_no1_a3.exe LMCLF_MP.exe  LMCLF_MP_LINER.exe LMCLF_MP_LOG.exe LMCLF_MP_LIST_IMP2_2shin.exe LMCLF_MP_LIST_IMP2_2shin_Trans.exe LMCLF_no2.exe LMCLF_no3.exe AcII_LMCF.exe AcII_LMCLF_no1.exe AcII_LMCLF_no2.exe AcII_LMCLF_no3.exe LLF_LMCLF_no1.exe LLF_LMCLF_no2.exe LLF_LMCLF_no3.exe LLF_AcII_LMCLF_no1.exe LLF_AcII_LMCLF_no2.exe LLF_AcII_LMCLF_no3.exe Result.exe
 
-OBJS = Rand.o EDF.o EDZL.o LLF.o LMCF.o LMCLF_no1.o LMCLF_no1_a.o LMCLF_no1_a2.o LMCLF_no1_a3.o LMCLF_MP.o LMCLF_MP_LIST.o LMCLF_MP_LIST_IMP.o LMCLF_MP_LIST_IMP2.o LMCLF_MP_LIST_IMP2_2shin.o LMCLF_no2.o LMCLF_no3.o AcII_LMCF.o AcII_LMCLF_no1.o AcII_LMCLF_no2.o AcII_LMCLF_no3.o LLF_LMCLF_no1.o LLF_LMCLF_no2.o LLF_LMCLF_no3.o LLF_AcII_LMCLF_no1.o LLF_AcII_LMCLF_no2.o LLF_AcII_LMCLF_no3.o Result.o
+OBJS = Rand.o EDF.o EDZL.o LLF.o LMCF.o LMCLF_no1.o LMCLF_no1_a.o LMCLF_no1_a2.o LMCLF_no1_a3.o LMCLF_MP.o  LMCLF_MP_LINER.o LMCLF_MP_LOG.o LMCLF_MP_LIST_IMP2_2shin.o LMCLF_MP_LIST_IMP2_2shin_Trans.o LMCLF_no2.o LMCLF_no3.o AcII_LMCF.o AcII_LMCLF_no1.o AcII_LMCLF_no2.o AcII_LMCLF_no3.o LLF_LMCLF_no1.o LLF_LMCLF_no2.o LLF_LMCLF_no3.o LLF_AcII_LMCLF_no1.o LLF_AcII_LMCLF_no2.o LLF_AcII_LMCLF_no3.o Result.o
 
 CC =/usr/bin/gcc
 RM =/bin/rm
@@ -38,16 +38,16 @@ LMCLF_no1_a3.exe : LMCLF_no1_a3.o
 LMCLF_MP.exe : LMCLF_MP.o
 	$(CC) -o $@ $<  -lpthread
 
-LMCLF_MP_LIST.exe : LMCLF_MP_LIST.o
+LMCLF_MP_LINER.exe : LMCLF_MP_LINER.o
 	$(CC) -o $@ $<  -lpthread
 
-LMCLF_MP_LIST_IMP.exe : LMCLF_MP_LIST_IMP.o
-	$(CC) -o $@ $<  -lpthread
-
-LMCLF_MP_LIST_IMP2.exe : LMCLF_MP_LIST_IMP2.o
+LMCLF_MP_LOG.exe : LMCLF_MP_LOG.o
 	$(CC) -o $@ $<  -lpthread
 
 LMCLF_MP_LIST_IMP2_2shin.exe : LMCLF_MP_LIST_IMP2_2shin.o
+	$(CC) -o $@ $<  -lpthread
+
+LMCLF_MP_LIST_IMP2_2shin_Trans.exe : LMCLF_MP_LIST_IMP2_2shin_Trans.o
 	$(CC) -o $@ $<  -lpthread
 
 LMCLF_no2.exe : LMCLF_no2.o
@@ -106,10 +106,10 @@ LMCLF_no1_a.o : LMCLF_no1_a.c
 LMCLF_no1_a2.o : LMCLF_no1_a2.c
 LMCLF_no1_a3.o : LMCLF_no1_a3.c
 LMCLF_MP.o : LMCLF_MP.c
-LMCLF_MP_LIST.o : LMCLF_MP_LIST.c
-LMCLF_MP_LIST_IMP.o : LMCLF_MP_LIST_IMP.c
-LMCLF_MP_LIST_IMP2.o : LMCLF_MP_LIST_IMP2.c
+LMCLF_MP_LINER.o : LMCLF_MP_LINER.c
+LMCLF_MP_LOG.o : LMCLF_MP_LOG.c
 LMCLF_MP_LIST_IMP2_2shin.o : LMCLF_MP_LIST_IMP2_2shin.c
+LMCLF_MP_LIST_IMP2_2shin_Trans.o : LMCLF_MP_LIST_IMP2_2shin_Trans.c
 LMCLF_no2.o : LMCLF_no2.c
 LMCLF_no3.o : LMCLF_no3.c
 
