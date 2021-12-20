@@ -13,7 +13,6 @@
 #define S 1024
 #define LINER(x) ((x==0)?(MAX):(1/fabs(x)))
 
-
 int TN = 0;					//タスク数
 int valTN=P*2;				//評価値により厳選されるタスク数
 double dead_max = 0;		//相対デッドラインの最大値
