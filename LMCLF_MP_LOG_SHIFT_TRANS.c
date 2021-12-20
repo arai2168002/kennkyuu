@@ -12,20 +12,19 @@
 //#define alpha 1000.0		//換算レート
 #define NIL ((List)0)
 #define S 1024
-#define MLOG10(x) ((x==0)?(0):(log10(fabs(x))))
-#define FIXEDPOINT 7
+#define FIXEDPOINT 7	//固定小数に変換するために2進数においてシフトする回数
 
-typedef long long FIXPOINTDECIMAL;
-#define ITFD(x) ((FIXPOINTDECIMAL)(x << FIXEDPOINT))
+typedef long long FIXPOINTDECIMAL;		//long long型をまとめて宣言
+#define ITFD(x) ((FIXPOINTDECIMAL)(x << FIXEDPOINT))	//int型の数値を固定小数に変換
 
 
 
 FIXPOINTDECIMAL MAX=2147483647; //起動していない時
 int TN = 0;					//タスク数
 int valTN=P*2;				//評価値により厳選されるタスク数
-FIXPOINTDECIMAL dead_max = 0;		//相対デッドラインの最大値
+double dead_max = 0;		//相対デッドラインの最大値
 FIXPOINTDECIMAL rand_memory[S][S];		//消費メモリ増分
-FIXPOINTDECIMAL ET[S];				//Taskの1ステップの実行時間の平均（本実験では1ステップ1単位時間で実行）
+double ET[S];				//Taskの1ステップの実行時間の平均（本実験では1ステップ1単位時間で実行）
 int schedule[S];			//Taskがスケジュールされるとき1，そうでないとき0
 
 int state[S];				//Taskが起動している場合は値を1,起動していない場合は0
@@ -33,7 +32,7 @@ int finish[S];				//タスクの処理がすべて終了していれば1，そ�
 
 int step[S];				//現在のステップ
 
-FIXPOINTDECIMAL save_laxity[S];		//Taskが終了した時のLaxity Time
+double save_laxity[S];		//Taskが終了した時のLaxity Time
 
 int Worst_Memory = 0;		//最悪メモリ消費量
 int Current_Memory = 0;		//現在のメモリ消費量
@@ -95,8 +94,8 @@ List appendList(List l1,List l2);	//リストl1の末尾にlリストl2を連結
 int iList(List l1,int i);			//リストのi番目の要素を返す
 void printList(List l);				//リストの要素を表示
 void fprintList(List l);            //リストの全要素をファイルに出力
-void fprintFPList(List l);
-int lengthList(List l);
+void fprintFPList(List l);			//リストの全要素文字列をファイルに出力
+int lengthList(List l);				//リストの長さを取得
 List firstnList(List l,unsigned int n);		//リストの先頭からn番目までの要素を削除
 List restnList(List l,unsigned int n);		//リストの末尾からn番目までの要素を削除
 int memberList(int element,List l);     //リストにその要素が含まれているかどうかを調べる関数
@@ -107,8 +106,8 @@ List ideleatList(List l1,List l2,int i);		//先頭からi番目の要素を書�
 List setList(List sourceList,List subsetList,int begin,int end);		//組み合わせの全パターンを格納したリストを返す
 int calcNumOfCombination(int n, int r);		//組み合わせの総数を返す
 int shiftoperationtimes(FIXPOINTDECIMAL n);		//シフト演算により桁数を取得
-FIXPOINTDECIMAL FTFD(double x);
-char *FixPointDecimalToString(FIXPOINTDECIMAL x);
+FIXPOINTDECIMAL FTFD(double x);				//double型の数値を固定小数に変換
+char *FixPointDecimalToString(FIXPOINTDECIMAL x);		//固定小数の値を整数部分と小数部分とで文字列に変換
 
 
 
@@ -256,7 +255,7 @@ int main(void) {
 	end_clock = clock();
 	fprintf(stderr, "\n-------------LMCLF Scheduling in %d-Processor Environment-------------\n\n", P);
 
-	fprintf(stderr, "\n clock：%f \n", (FIXPOINTDECIMAL)(end_clock - start_clock)/CLOCKS_PER_SEC);
+	fprintf(stderr, "\n clock：%f \n", (double)(end_clock - start_clock)/CLOCKS_PER_SEC);
 
 	return 0;
 }
@@ -487,14 +486,14 @@ void LMCLF(){
 
 	FIXPOINTDECIMAL priority_func[S];		//優先度関数値格納変数（作業用）
 	FIXPOINTDECIMAL val=0,minval=MAX;               //評価値格納変数
-	int priority_func1=0,priority_func2=0;
+	FIXPOINTDECIMAL priority_func1=0,priority_func2=0;
 	int i = 0,j = 0,k = 0,l = 0,a = 0,b = 0,c = 0;		//カウント用変数
 	int set1=0,set2=0; //1,2ステップ目のタスクの組み合わせ数
 	FIXPOINTDECIMAL prealpha=alpha;	//前の周期のα
 	FIXPOINTDECIMAL alphauppermin=MAX,alphalowermax=0;   //αの範囲最大最小
 	FIXPOINTDECIMAL alphaupperminsav=MAX,alphalowermaxsav=0;   //αの範囲最大最小(保存用)
     FIXPOINTDECIMAL s1val=0,s2val=0;  //1ステップ目,2ステップ目の評価値の合計
-	int tempalpha1=0,tempalpha2=0;  //仮のαの上限下限格納関数
+	FIXPOINTDECIMAL tempalpha1=0,tempalpha2=0;  //仮のαの上限下限格納関数
 	int valketa=0;	//評価値計算のための桁数を調整するためのもの
 	int besti,bestk;   // 最小メモリとなるiとkを記憶
 	int mintasknum=0;	//評価値が最小となるタスク番号
@@ -517,15 +516,12 @@ void LMCLF(){
 	List bestkumi1=createList();	//1ステップ目での最小メモリとなるタスクの組み合わせを記憶
 	List bestkumi2=createList();	//2ステップ目での最小メモリとなるタスクの組み合わせを記憶
 	
-
-	fprintf(stderr,"MAX=:%lld\n",MAX);
 	pthread_mutex_lock(&mutex);
     alphadiff=0;
 	minval=MAX;
 	/*換算レートαの決定*/
   	for(i=TN-1;i>=0;i--){//val1に評価値を格納
 	  if(state[i]==1){
-		fprintf(stderr,"%d L=%lf\n",shiftoperationtimes(task_data[i].Laxity_Time),task_data[i].Laxity_Time);
 		//メモリと時間の桁数を合わせることで仮のαを求めそれを用い評価値の計算
 		//valketa=shiftoperationtimes((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) - shiftoperationtimes(rand_memory[i][step[i]]);
 		//val1=insertList(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((valketa>=0)?(rand_memory[i][step[i]] << valketa):(rand_memory[i][step[i]] >> abs(valketa))),val1);
@@ -886,7 +882,6 @@ int iList(List l1,int i){
 List ideleatList(List l1,List l2,int i){
   	if(i==0){
 		l1->element=MAX;
-		fprintList(l2);
     	return l2;
   	}else{
     	return ideleatList(tailList(l1),l2,i-1);
@@ -915,6 +910,15 @@ void fprintList(List l) {
   	}
 }
 
+void fprintFPList(List l) {
+
+  	if(nullpList(l)){ 
+    	fprintf(stderr, "\n"); 
+  	}else{
+    	fprintf(stderr, "%s ", FixPointDecimalToString(headList(l)));
+    	fprintList(tailList(l));
+  	}
+}
 
 //先頭からn番目までの要素をリストに入れて返す
 List firstnList(List l,unsigned int n){
@@ -1052,14 +1056,4 @@ char *FixPointDecimalToString(FIXPOINTDECIMAL x){
 	snprintf(buf,sizeof(buf),"%d.%0d",ipart,fpart);
 
 	return strdup(buf);
-}
-
-void fprintFPList(List l) {
-
-  	if(nullpList(l)){ 
-    	fprintf(stderr, "\n"); 
-  	}else{
-    	fprintf(stderr, "%s ", FixPointDecimalToString(headList(l)));
-    	fprintList(tailList(l));
-  	}
 }
