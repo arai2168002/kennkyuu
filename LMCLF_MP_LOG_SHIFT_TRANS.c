@@ -12,7 +12,7 @@
 //#define alpha 1000.0		//換算レート
 #define NIL ((List)0)
 #define S 1024
-#define FIXEDPOINT 7	//固定小数に変換するために2進数においてシフトする回数
+#define FIXEDPOINT 2	//固定小数に変換するために2進数においてシフトする回数
 
 typedef long long FIXPOINTDECIMAL;		//long long型をまとめて宣言
 #define ITFD(x) ((FIXPOINTDECIMAL)(x << FIXEDPOINT))	//int型の数値を固定小数に変換
@@ -246,7 +246,7 @@ int main(void) {
 	/*ログの出力*/
 	char log[256];
 	FILE *fpout_LMCLF;
-	sprintf(log, "datafile_LMCLF_%lf.txt", alpha);
+	sprintf(log, "datafile_LMCLF_%d.txt", alpha);
 	fpout_LMCLF = fopen(log, "a");
 	fprintf(fpout_LMCLF, "%d\t", Worst_Memory);		
 	fprintf(fpout_LMCLF, "%d\r\n", Deadline_Miss);
