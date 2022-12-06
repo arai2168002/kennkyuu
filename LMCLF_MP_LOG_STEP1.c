@@ -577,15 +577,15 @@ void LMCLF(){
         }
         if(alphauppermin>0 && alphalowermax < alphauppermin){ //求めたいαが条件を満たしている時
         	//fprintf(stderr,"%lf <= alpha <= %lf for scheduling task %d and then task %d\n",alphalowermax,alphauppermin,i+1,k+1);
-			val=0;
+
 			Laxityjudge=0;
 
             //1ステップ目の評価値の合計
-            for(i=0,s1val=0;i<TN;i++){
+            for(i=0,val=0;i<TN;i++){
                 if(memberList(i,kumi1)==1 && state[i] == 1){ /* set1のiビット目が1ならば */
 					//valketa=MLOG10((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) - MLOG10(rand_memory[i][step[i]]);
                     //s1val+=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((1.0 * pow(10,valketa)) * rand_memory[i][step[i]]));
-					s1val+=((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + (prealpha * rand_memory[i][step[i]]);
+					val+=((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + (prealpha * rand_memory[i][step[i]]);
                     
 					NewLaxityjudge=MLOG10(task_data[i].Laxity_Time);
 
@@ -603,7 +603,6 @@ void LMCLF(){
 				}
 			}
 		}			
-		freeList(Aset2orig);
    	}
 	freeList(Aset1orig);	
 		

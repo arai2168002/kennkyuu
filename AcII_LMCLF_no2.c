@@ -6,8 +6,9 @@
 #include <pthread.h>
 #include <time.h>
 
+#define P 4
 //#define P 2 
-#define P 1 				//プロセッサ数
+//#define P 1 				//プロセッサ数
 #define MAX 1000000000		//起動していない時
 #define alpha 1.0			//換算レート
 #define S 1024		

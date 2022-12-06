@@ -660,30 +660,38 @@ void LMCLF(){
                 //1ステップ目の評価値の合計
                 for(i=0,s1val=0;i<TN;i++){
                     if(memberList(i,kumi1)==1 && state[i] == 1){ /* set1のiビット目が1ならば */
-						//valketa=MLOG10((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) - MLOG10(rand_memory[i][step[i]]);
-                        //s1val+=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((1.0 * pow(10,valketa)) * rand_memory[i][step[i]]));
 						s1val+=((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + (prealpha * rand_memory[i][step[i]]);
                     
-						NewLaxityjudge=MLOG10(task_data[i].Laxity_Time);
+						/*NewLaxityjudge=MLOG10(task_data[i].Laxity_Time);
 
 						if(NewLaxityjudge>Laxityjudge){
 							Laxityjudge=NewLaxityjudge;
-						}
+						}*/
+					}
+					NewLaxityjudge=MLOG10(task_data[i].Laxity_Time);
+					//NewLaxityjudge=(NewLaxityjudge > MLOG10(task_data[i].WCET - step[i]))?(MLOG10(task_data[i].WCET - step[i])):NewLaxityjudge;
+
+					if(NewLaxityjudge>Laxityjudge){
+							Laxityjudge=NewLaxityjudge;
 					}
                 }
 				
                 //2ステップ目の評価値の合計
                 for(k=0,s2val=0;k<TN;k++){
                     if(memberList(k,kumi2)==1 && state[k] == 1){ /* set2のiビット目が1ならば */
-						//valketa= MLOG10((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[i]) * task_data[k].Laxity_Time) - MLOG10(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]]);
-                        //s2val+=((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) + ((1.0 * pow(10,valketa)) * rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]]);
 						s2val+=(((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) + (prealpha * rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]]));
         
-						NewLaxityjudge=MLOG10(task_data[k].Laxity_Time);
+						/*NewLaxityjudge=MLOG10(task_data[k].Laxity_Time);
 
 						if(NewLaxityjudge>Laxityjudge){
 							Laxityjudge=NewLaxityjudge;
-						}
+						}*/
+					}
+					NewLaxityjudge=MLOG10(task_data[k].Laxity_Time);
+					//NewLaxityjudge=(NewLaxityjudge > MLOG10(task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]))?(MLOG10(task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k])):NewLaxityjudge;
+
+					if(NewLaxityjudge>Laxityjudge){
+							Laxityjudge=NewLaxityjudge;
 					}
                 }
 				

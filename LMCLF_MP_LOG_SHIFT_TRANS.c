@@ -99,11 +99,14 @@ int lengthList(List l);				//リストの長さを取得
 List firstnList(List l,unsigned int n);		//リストの先頭からn番目までの要素を削除
 List restnList(List l,unsigned int n);		//リストの末尾からn番目までの要素を削除
 int memberList(int element,List l);     //リストにその要素が含まれているかどうかを調べる関数
+int memberList2(List l);
 void freeList(List l);		//リストのメモリ解放
 List copyList(List l);		//リストの複製を生成
 int minList(List l,int tasknum1,int tasknum2,FIXPOINTDECIMAL min);	//リストの評価値の最小値のタスク番号を返す
 List ideleatList(List l1,List l2,int i);		//先頭からi番目の要素を書き換える
 List setList(List sourceList,List subsetList,int begin,int end);		//組み合わせの全パターンを格納したリストを返す
+List Makesubsetset(List T,int i,int j);		//特定の要素数の部分集合を列挙
+int subsetset(int n,List T);		//要素nを各部分集合に追加
 int calcNumOfCombination(int n, int r);		//組み合わせの総数を返す
 int shiftoperationtimes(FIXPOINTDECIMAL n);		//シフト演算により桁数を取得
 FIXPOINTDECIMAL FTFD(double x);				//double型の数値を固定小数に変換
@@ -546,6 +549,9 @@ void LMCLF(){
 
 	fprintf(stderr,"step1探索範囲を狭めたタスク番号:"); fprintList(setP1);
 
+
+
+//これより下を変える//
 	if(setP1num>=P){
   		Aset1=setList(setP1,createList(),0,setP1num-P+1);
 	}else{
@@ -563,12 +569,18 @@ void LMCLF(){
     	kumi1=firstnList(Aset1,P);
         Aset1=restnList(Aset1,P);
 		//fprintf(stderr,"kumi1 %d組目:",set1); fprintList(kumi1);
-	
+//これより上を変える//
+
+
+
 		alphauppermin=MAX,alphalowermax=0;    
 		for(i=0;i<TN;i++){
 			if(memberList(i,kumi1)==1 && state[i] == 1){  /* iタスク目が選ばれていてかつタスクが起動していたら */
 				for(j=0;j<TN;j++){
 					if(memberList(j,kumi1)==0 && state[j] == 1){  //jタスク目が選ばれていないかつタスクが起動していたら
+						if(rand_memory[i][step[i]] == rand_memory[j][step[j]]) {  // 修正提案2022.12.1中田 0除算を回避するため
+					    	continue;
+					  	} else
 						if(rand_memory[i][step[i]] < rand_memory[j][step[j]]){// m(i)α+Ci*Li<m(j)α+Cj*Lj && m(j)>m(i) --> Ci*Li-Cj*Lj<(m(j)-m(i))α --> α>(Ci*Li-Cj*Lj)/(m(j)-m(i))
 							tempalpha1=((FTFD(task_data[i].WCET - step[i]) * FTFD(task_data[i].Laxity_Time))-(FTFD(task_data[j].WCET - step[j]) * FTFD(task_data[j].Laxity_Time)))/(ITFD(rand_memory[j][step[j]])-ITFD(rand_memory[i][step[i]]));
 							if(alphalowermax<tempalpha1){	
@@ -645,6 +657,9 @@ void LMCLF(){
 	    		if(memberList(k,kumi2)==1 && state[k] == 1){ /* kタスク目が選ばれていてかつタスクが起動していたら */
 					for(l=0;l<TN;l++){
 						if(memberList(l,kumi2)==0 && state[l] == 1){  /* lタスク目が選ばれていないかつタスクが起動していたら */
+							if(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] == rand_memory[l][(memberList(l,kumi1)==1)?(step[l]+1):step[l]] ) {  // 修正提案2022.12.1中田 0除算を回避するため
+						    	continue;
+						  	} else
 		    				if(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] < rand_memory[l][(memberList(l,kumi1)==1)?(step[l]+1):step[l]] ){  // m(k)α+Ck*Lk<m(l)α+Cl*Ll && m(l)>m(k) --> Ck*Lk-Cl*Ll<(m(l)-m(k))α --> α>(Ck*Lk-Cl*Ll)/(m(l)-m(k))
 		    					tempalpha1=((FTFD((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k])) * FTFD(task_data[k].Laxity_Time))-(FTFD((task_data[l].WCET - (memberList(l,kumi1)==1)?(step[l]+1):step[l])) * FTFD(task_data[l].Laxity_Time)))/(ITFD(rand_memory[l][(memberList(l,kumi1)==1)?(step[l]+1):step[l]]) - ITFD(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]]));	
 		    					if(alphalowermax<tempalpha1){
@@ -672,18 +687,16 @@ void LMCLF(){
 						//valketa=shiftoperationtimes((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) - shiftoperationtimes(rand_memory[i][step[i]]);
                         //s1val+=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((valketa>=0)?(rand_memory[i][step[i]] << valketa):(rand_memory[i][step[i]] >> abs(valketa))));
 						s1val+=(FTFD((task_data[i].WCET - step[i])) * FTFD(task_data[i].Laxity_Time)) + (prealpha * ITFD(rand_memory[i][step[i]]));
-                    
-
-						if(task_data[i].Laxity_Time!=0){
-							NewLaxityjudge=1/shiftoperationtimes((int)(task_data[i].Laxity_Time));
-						}else{
-							NewLaxityjudge=MAX;
-						}
-
-						if(NewLaxityjudge>Laxityjudge){
-							Laxityjudge=NewLaxityjudge;
-						}	
 					}
+					if(task_data[i].Laxity_Time>0){
+						NewLaxityjudge=(FTFD((double)1/shiftoperationtimes(task_data[i].Laxity_Time))); // 修正提案2022.12.1中田 左辺が固定小数点型なのに、右辺の除算が整数型になっており、小数点以下が求まらないので修正
+						//NewLaxityjudge=1/shiftoperationtimes(task_data[i].Laxity_Time);
+					}else{
+						NewLaxityjudge=MAX;
+					}
+					if(NewLaxityjudge>Laxityjudge){
+						Laxityjudge=NewLaxityjudge;
+					}						
                 }
 
                 //2ステップ目の評価値の合計とLaxityjudgeの設定
@@ -693,15 +706,15 @@ void LMCLF(){
                         //s2val+=((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k]) * task_data[k].Laxity_Time) + (valketa>=0)?(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] << valketa):(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]] >> abs(valketa));
 						s2val+=((FTFD((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k])) * FTFD(task_data[k].Laxity_Time)) + (prealpha * ITFD(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]])));
 						
-						if(task_data[k].Laxity_Time!=0){//0になるまでシフト演算してその回数が少ないほどLaxityjudgeを大きくして逆の場合は小さくしたい
-							NewLaxityjudge=1/shiftoperationtimes((int)(task_data[k].Laxity_Time));
-						}else{
-							NewLaxityjudge=MAX;
-						}
-
-						if(NewLaxityjudge>Laxityjudge){
-							Laxityjudge=NewLaxityjudge;
-						}
+					}
+					if(task_data[k].Laxity_Time!=0){//0になるまでシフト演算してその回数が少ないほどLaxityjudgeを大きくして逆の場合は小さくしたい
+						NewLaxityjudge=FTFD((double)1/shiftoperationtimes((task_data[k].Laxity_Time))); // 修正提案2022.12.1中田 左辺が固定小数点型なのに、右辺の除算が整数型になっており、小数点以下が求まらないので修正
+						//NewLaxityjudge=1/shiftoperationtimes((task_data[k].Laxity_Time)); // 修正提案2022.12.1中田 左辺が固定小数点型なのに、右辺の除算が整数型になっており、小数点以下が求まらないので修正
+					}else{
+						NewLaxityjudge=MAX;
+					}
+					if(NewLaxityjudge>Laxityjudge){
+						Laxityjudge=NewLaxityjudge;
 					}
                 }
 
@@ -952,6 +965,16 @@ int memberList(int element,List l){
 
 }
 
+//リスト空であるかどうか確認
+int memberList2(List l){
+
+	if(nullpList(l)){
+		return 0;
+	}else{
+		return 1;
+	}
+}
+
 //リストのメモリ解放
 void freeList(List l){
 	if(nullpList(l)){
@@ -1018,6 +1041,28 @@ List setList(List sourceList,List subsetList,int begin,int end){
   	return p;
 }
 
+/*List Makesubsetset(List T,int i,int j){
+	List subsetList=createList();
+
+	if(nullpList(T)){//要素が存在しない場合
+		return Makesubsetset(tailList(T),i,j);
+	}else{
+		subsetList=Makesubsetset(tailList(T),i-1,j-1); //先頭要素を含まない部分集合の再帰
+		return subsetset(headList(T),subsetList);
+	}
+}
+
+//要素がなくなるまで部分集合にTの先頭要素を入れる
+int subsetset(int n,List T){
+	List temp=createList();
+
+	if(nullpList(T)){
+		return temp;
+	}else{
+		return insertList(n,subsetset(n,tailList(T)));
+	}
+}
+*/
 //組み合わせの総数を求める
 int calcNumOfCombination(int n, int r){
     int num = 1;
