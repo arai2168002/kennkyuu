@@ -547,7 +547,7 @@ void LMCLF(){
 
 	setP1num=lengthList(setP1);
 
-	fprintf(stderr,"step1探索範囲を狭めたタスク番号:"); fprintList(setP1);
+	//fprintf(stderr,"step1探索範囲を狭めたタスク番号:"); fprintList(setP1);
 
 
 
@@ -558,7 +558,7 @@ void LMCLF(){
 		Aset1=copyList(setP1);
 	}
 
-	fprintf(stderr,"step1タスク番号集合:"); fprintList(Aset1);
+	//fprintf(stderr,"step1タスク番号集合:"); fprintList(Aset1);
 	freeList(setP1);
 
   	for(set1=0;set1<calcNumOfCombination(setP1num,P);set1++){
@@ -631,7 +631,7 @@ void LMCLF(){
 		freeList(copyval2);
 
 		setP2num=lengthList(setP2);
-		fprintf(stderr,"step2探索範囲を狭めたタスク番号:"); fprintList(setP2);
+		//fprintf(stderr,"step2探索範囲を狭めたタスク番号:"); fprintList(setP2);
 
 
 		if(setP2num>=P){
@@ -640,7 +640,7 @@ void LMCLF(){
 			Aset2=copyList(setP2);
 		}
 
-		fprintf(stderr,"step2タスク番号集合:"); fprintList(Aset2);
+		//fprintf(stderr,"step2タスク番号集合:"); fprintList(Aset2);
 		freeList(setP2);
 
 		Aset2orig=Aset2;
@@ -688,6 +688,7 @@ void LMCLF(){
                         //s1val+=(((task_data[i].WCET - step[i]) * task_data[i].Laxity_Time) + ((valketa>=0)?(rand_memory[i][step[i]] << valketa):(rand_memory[i][step[i]] >> abs(valketa))));
 						s1val+=(FTFD((task_data[i].WCET - step[i])) * FTFD(task_data[i].Laxity_Time)) + (prealpha * ITFD(rand_memory[i][step[i]]));
 					}
+					/*
 					if(task_data[i].Laxity_Time>0){
 						NewLaxityjudge=(FTFD((double)1/shiftoperationtimes(task_data[i].Laxity_Time))); // 修正提案2022.12.1中田 左辺が固定小数点型なのに、右辺の除算が整数型になっており、小数点以下が求まらないので修正
 						//NewLaxityjudge=1/shiftoperationtimes(task_data[i].Laxity_Time);
@@ -696,7 +697,7 @@ void LMCLF(){
 					}
 					if(NewLaxityjudge>Laxityjudge){
 						Laxityjudge=NewLaxityjudge;
-					}						
+					}		*/				
                 }
 
                 //2ステップ目の評価値の合計とLaxityjudgeの設定
@@ -707,6 +708,7 @@ void LMCLF(){
 						s2val+=((FTFD((task_data[k].WCET - (memberList(k,kumi1)==1)?(step[k]+1):step[k])) * FTFD(task_data[k].Laxity_Time)) + (prealpha * ITFD(rand_memory[k][(memberList(k,kumi1)==1)?(step[k]+1):step[k]])));
 						
 					}
+					/*
 					if(task_data[k].Laxity_Time!=0){//0になるまでシフト演算してその回数が少ないほどLaxityjudgeを大きくして逆の場合は小さくしたい
 						NewLaxityjudge=FTFD((double)1/shiftoperationtimes((task_data[k].Laxity_Time))); // 修正提案2022.12.1中田 左辺が固定小数点型なのに、右辺の除算が整数型になっており、小数点以下が求まらないので修正
 						//NewLaxityjudge=1/shiftoperationtimes((task_data[k].Laxity_Time)); // 修正提案2022.12.1中田 左辺が固定小数点型なのに、右辺の除算が整数型になっており、小数点以下が求まらないので修正
@@ -715,7 +717,7 @@ void LMCLF(){
 					}
 					if(NewLaxityjudge>Laxityjudge){
 						Laxityjudge=NewLaxityjudge;
-					}
+					}*/
                 }
 
                 if(s1val>s1val+s2val){  //1ステップ目の評価値の合計が1ステップ目,2ステップ目の評価値の合計より大きい場合
@@ -727,9 +729,11 @@ void LMCLF(){
               	if(minval>val){  //今まで求めた最小の評価値よりも小さいとき
 		    		minval=val;  bestkumi1=copyList(kumi1); bestkumi2=copyList(kumi2);
 	    			if(alphauppermin<MAX){//αの下限の最大値がMAXより小さい場合αの下限の最大値と上限の最小値を足して2で割った値をαの候補とし、さらに余裕時間の大きさによってαの値を調整
-						alpha=((alphalowermax + alphauppermin)/2) >> Laxityjudge;
+						//alpha=((alphalowermax + alphauppermin)/2) >> Laxityjudge;
+						alpha=((alphalowermax + alphauppermin)/2);
 					}else if(alphauppermin>=MAX){//さもなければαの下限の最大値をαの候補とし、さらに余裕時間の大きさによってαの値を調整
-						alpha=(alphalowermax) >> Laxityjudge;
+						//alpha=(alphalowermax) >> Laxityjudge;
+						alpha=(alphalowermax);
 					}
 				}
 			}			

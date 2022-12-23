@@ -1,6 +1,6 @@
-TARGETS = Rand.exe EDF.exe EDZL.exe LLF.exe LMCF.exe LMCLF_no1.exe LMCLF_no1_a.exe LMCLF_no1_a2.exe LMCLF_no1_a3.exe LMCLF_MP.exe  LMCLF_MP_LINER.exe LMCLF_MP_LOG.exe LMCLF_MP_LOG_STEP1.exe LMCLF_MP_LOG_SHIFT_TRANS.exe LMCLF_no2.exe LMCLF_no3.exe AcII_LMCF.exe AcII_LMCLF_no1.exe AcII_LMCLF_no2.exe AcII_LMCLF_no3.exe AcII_LMCLF_Alpha_auto.exe LLF_LMCLF_no1.exe LLF_LMCLF_no2.exe LLF_LMCLF_no3.exe LLF_AcII_LMCLF_no1.exe LLF_AcII_LMCLF_no2.exe LLF_AcII_LMCLF_no3.exe Result.exe
+TARGETS = Rand.exe EDF.exe EDZL.exe LLF.exe LMCF.exe LMCLF_no1.exe LMCLF_no1_a.exe LMCLF_no1_a2.exe LMCLF_no1_a3.exe LMCLF_MP.exe  LMCLF_MP_LINER.exe LMCLF_MP_LOG.exe LMCLF_MP_LOG_STEP1.exe LMCLF_MP_LOG_SHIFT_TRANS.exe LMCLF_no2.exe LMCLF_no3.exe AcII_LMCF.exe AcII_LMCLF_no1.exe AcII_LMCLF_no2.exe AcII_LMCLF_no3.exe AcII_LMCLF_Alpha_auto.exe LLF_LMCLF_no1.exe LLF_LMCLF_no2.exe LLF_LMCLF_no3.exe LLF_AcII_LMCLF_no1.exe LLF_AcII_LMCLF_no2.exe LLF_AcII_LMCLF_no3.exe LLF_AcII_LMCLF_re.exe Result.exe
 
-OBJS = Rand.o EDF.o EDZL.o LLF.o LMCF.o LMCLF_no1.o LMCLF_no1_a.o LMCLF_no1_a2.o LMCLF_no1_a3.o LMCLF_MP.o  LMCLF_MP_LINER.o LMCLF_MP_LOG.o LMCLF_MP_LOG_STEP1.o  LMCLF_MP_LOG_SHIFT_TRANS.o LMCLF_no2.o LMCLF_no3.o AcII_LMCF.o AcII_LMCLF_no1.o AcII_LMCLF_no2.o AcII_LMCLF_no3.o AcII_LMCLF_Alpha_auto.o LLF_LMCLF_no1.o LLF_LMCLF_no2.o LLF_LMCLF_no3.o LLF_AcII_LMCLF_no1.o LLF_AcII_LMCLF_no2.o LLF_AcII_LMCLF_no3.o Result.o
+OBJS = Rand.o EDF.o EDZL.o LLF.o LMCF.o LMCLF_no1.o LMCLF_no1_a.o LMCLF_no1_a2.o LMCLF_no1_a3.o LMCLF_MP.o  LMCLF_MP_LINER.o LMCLF_MP_LOG.o LMCLF_MP_LOG_STEP1.o  LMCLF_MP_LOG_SHIFT_TRANS.o LMCLF_no2.o LMCLF_no3.o AcII_LMCF.o AcII_LMCLF_no1.o AcII_LMCLF_no2.o AcII_LMCLF_no3.o AcII_LMCLF_Alpha_auto.o LLF_LMCLF_no1.o LLF_LMCLF_no2.o LLF_LMCLF_no3.o LLF_AcII_LMCLF_no1.o LLF_AcII_LMCLF_no2.o LLF_AcII_LMCLF_no3.o LLF_AcII_LMCLF_re.o Result.o
 
 CC =/usr/bin/gcc
 RM =/bin/rm
@@ -89,6 +89,9 @@ LLF_AcII_LMCLF_no2.exe : LLF_AcII_LMCLF_no2.o
 LLF_AcII_LMCLF_no3.exe : LLF_AcII_LMCLF_no3.o 
 	$(CC) -o $@ $< -lpthread
 
+LLF_AcII_LMCLF_re.exe : LLF_AcII_LMCLF_re.o 
+	$(CC) -o $@ $< -lpthread	
+
 	
 Result.exe : Result.o
 	$(CC) -o $@ $<
@@ -130,6 +133,7 @@ LLF_LMCLF_no3.o : LLF_LMCLF_no3.c
 LLF_AcII_LMCLF_no1.o : LLF_AcII_LMCLF_no1.c
 LLF_AcII_LMCLF_no2.o : LLF_AcII_LMCLF_no2.c
 LLF_AcII_LMCLF_no3.o : LLF_AcII_LMCLF_no3.c
+LLF_AcII_LMCLF_re.o : LLF_AcII_LMCLF_re.c
 
 Result.o : Result.c
 

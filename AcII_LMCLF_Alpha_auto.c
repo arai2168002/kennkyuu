@@ -730,7 +730,7 @@ void AcII_LMCLF(){
 						//fprintf(stderr,"い");
 					}
 					
-					if(task_data[i].Laxity_Time>0){
+							/*if(task_data[i].Laxity_Time>0){
 						//fprintf(stderr,"%d %d",i,(task_data[i].Laxity_Time));
 					  NewLaxityjudge=(FTFD((double)1/shiftoperationtimes(task_data[i].Laxity_Time))); // 修正提案2022.12.1中田 左辺が固定小数点型なのに、右辺の除算が整数型になっており、小数点以下が求まらないので修正
 						//fprintf(stderr,"う");
@@ -739,7 +739,7 @@ void AcII_LMCLF(){
 					}
 					if(NewLaxityjudge>Laxityjudge){
 						Laxityjudge=NewLaxityjudge;
-					}						
+					}	*/					
                 }
 				//fprintf(stderr,"あ");
                 //2ステップ目の評価値の合計とLaxityjudgeの設定
@@ -750,15 +750,15 @@ void AcII_LMCLF(){
 						s2val+=((FTFD((task_data[k].WCET - (memberList(k,kumi1)==1)?(tmp_step[k]+1):tmp_step[k])) * FTFD(task_data[k].Laxity_Time)) + (prealpha * ITFD(rand_memory[k][(memberList(k,kumi1)==1)?(tmp_step[k]+1):tmp_step[k]])));
 						
 					}
-					if(task_data[k].Laxity_Time!=0){//0�ɂȂ�܂ŃV�t�g���Z���Ă��̉񐔂����Ȃ��ق�Laxityjudge��傫�����ċt�̏ꍇ�͏�����������
-					  NewLaxityjudge=FTFD((double)1/shiftoperationtimes((task_data[k].Laxity_Time))); // 修正提案2022.12.1中田 左辺が固定小数点型なのに、右辺の除算が整数型になっており、小数点以下が求まらないので修正
+					/*if(task_data[k].Laxity_Time!=0){//0�ɂȂ�܂ŃV�t�g���Z���Ă��̉񐔂����Ȃ��ق�Laxityjudge��傫�����ċt�̏ꍇ�͏�����������
+					  	NewLaxityjudge=FTFD((double)1/shiftoperationtimes((task_data[k].Laxity_Time))); // 修正提案2022.12.1中田 左辺が固定小数点型なのに、右辺の除算が整数型になっており、小数点以下が求まらないので修正
 					}else{
 						NewLaxityjudge=MAX;
 					}
 
 					if(NewLaxityjudge>Laxityjudge){
 						Laxityjudge=NewLaxityjudge;
-					}
+					}*/
                 }
 
                 if(s1val>s1val+s2val){  //1�X�e�b�v�ڂ̕]���l�̍��v��1�X�e�b�v��,2�X�e�b�v�ڂ̕]���l�̍��v���傫���ꍇ
@@ -770,9 +770,11 @@ void AcII_LMCLF(){
               	if(minval>val){  //���܂ŋ��߂��ŏ��̕]���l�����������Ƃ�
 		    		minval=val;  bestkumi1=copyList(kumi1); bestkumi2=copyList(kumi2);
 	    			if(alphauppermin<MAX){//���̉����̍ő�l��MAX��菬�����ꍇ���̉����̍ő�l�Ə���̍ŏ��l�𑫂���2�Ŋ������l�����̌��Ƃ��A����ɗ]�T���Ԃ̑傫���ɂ���ă��̒l�𒲐�
-						alpha=((alphalowermax + alphauppermin)/2) >> Laxityjudge;
+						//alpha=((alphalowermax + alphauppermin)/2) >> Laxityjudge;
+						alpha=((alphalowermax + alphauppermin)/2);
 					}else if(alphauppermin>=MAX){//�����Ȃ���΃��̉����̍ő�l�����̌��Ƃ��A����ɗ]�T���Ԃ̑傫���ɂ���ă��̒l�𒲐�
-						alpha=(alphalowermax) >> Laxityjudge;
+						//alpha=(alphalowermax) >> Laxityjudge;
+						alpha=(alphalowermax);
 					}
 				}
 			}			
